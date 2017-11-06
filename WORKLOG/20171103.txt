@@ -1,0 +1,34 @@
+tar:
+绑定 Doc------------------------------------完成
+检查文件是否存在
+检查文件是否为指定类型文件
+
+添加 Sheet----------------------------------完成
+删除 Sheet 按名字，	按序号 -----------------完成
+修改 Sheet 名字，按旧名字，按序号-----------完成
+查询 Sheet 按名字， 按序号 -----------------完成
+
+清空整个Sheet中所有数据----------------------------完成
+查询Sheet中单元格数据------------------------------未完成
+修改Sheet中单元格数据------------------------------未完成
+	
+	日志类--------------------------------------未完成
+	
+	托管类型转非托管类型
+	http://www.cnblogs.com/kekec/archive/2011/03/25/1995729.html
+	
+	
+	//ISheet ^ tb = wk->CreateSheet("Sheet1"); 
+		//IRow ^ row = tb->CreateRow(1);
+
+		//for (int i = 0; i < 20; i++)    
+		//{
+		//	ICell ^cell = row->CreateCell(i);  //在第二行中创建单元格
+		//	cell->SetCellValue("world"); //循环往第二行的单元格中添加数据
+		//}
+		
+		System.ArgumentException”类型的未经处理的异常出现在 NPOI.dll 中。
+
+其他信息: The workbook already contains a sheet of this name
+
+m_pFile = File::Open(m_strFileName, FileMode::OpenOrCreate, FileAccess::ReadWrite);

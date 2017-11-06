@@ -1,0 +1,16 @@
+显卡驱动安装				
+RPM username heyk password 888888
+
+拷贝构造函数
+
+<< Windows核心编程 >>下载   
+
+郭振冬 方兴 刘俊
+
+何源阔 内邮账户：heyk 密码：123 内邮名称heyk@server 访问地址：http://10.8.8.254:8383 
+外邮件账户：heyk@hustcad.com  密码：hyk123456  访问地址：http://mail.hustcad.com 
+OA账户：heyk 密码：123456 访问地址：http://oa.hustcad.com:90 
+
+ 
+
+ OA必须使用谷歌浏览器登录

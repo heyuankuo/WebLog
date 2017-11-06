@@ -1,0 +1,30 @@
+tar:
+
+CreateProcess 	创建进程测试
+
+SQL 			存储过程和函数
+
+varchar(max) 
+
+tips:
+
+CAD 开发平台工具 
+	ODA(Open Design Alliance)介绍
+	
+varchar(n)：
+长度为 n 个字节的可变长度且非 Unicode 的字符数据。n 必须是一个介于 1 和 8,000 之间的数值。存储大小为输入数据的字节的实际长度，而不是 n 个字节。
+
+nvarchar(n)：
+包含 n 个字符的可变长度 Unicode 字符数据。n 的值必须介于 1 与 4,000 之间。字节的存储大小是所输入字符个数的两倍。
+
+数据库编码方式 SELECT  COLLATIONPROPERTY('Chinese_PRC_Stroke_CI_AI_KS_WS', 'CodePage') 
+
+SQLSERVER 中 N'' 				类似于 C++ 中 L""
+SQLSERVER 中 ISNULL 			如果为NULL 则替换，返回本身类型
+
+CreateProcess 成功返回，则PROCESS_INFORMATION(最后一个参数)被填充，反之为空，不需要释放（CloseHandle 也不会报错就是了）
+
+
+
+
+	

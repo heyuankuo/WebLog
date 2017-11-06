@@ -1,0 +1,17 @@
+tar: 
+ 通过流程获得加密
+ 
+ 数据库分库，读写分离，自动同步
+ rename("ADODB","CDO")　rename("EOF", "EndOfFile")
+ 
+ rename("ADODB","CDO")　rename("EOF", "EndOfFile")
+ 3f57494c7aedd4d8982e98055668b830
+ 
+ 看一下发送流程
+ .Item(cdoSendUsingMethod) = cdoSendUsingPort 
+  .Item(cdoSMTPServer) = "smtp.163.com"    <smtp邮件发送服务器>
+  .Item(cdoSMTPServerPort) = 25                  
+  .Item(cdoSMTPConnectionTimeout) = 10     
+  .Item(cdoSMTPAuthenticate) = cdoBasic 
+  .Item(cdoSendUserName) = test@163.com   <发送者邮件地址>
+  .Item(cdoSendPassword) = "123456"       <发送者邮件密码>

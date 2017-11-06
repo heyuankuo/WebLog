@@ -1,0 +1,22 @@
+tar:
+	office 文件 自动加密hook -------未完成
+	MD5 计算------------------------未完成
+	DLLinjection--------------------未完成
+	COM进程传递字符串---------------完成 CComBSTR
+	BSTR----------------------------完成 
+	COM自动化类型使用---------------完成
+	
+	.NET MVC 数据库连接-------------完成 .NET EF框架
+	<add name="MovieDBContext" connectionString="Server=.;Database=KEY;User Id=KeyUser;Password=KeyUser;" providerName="System.Data.SqlClient"/>http://www.cnblogs.com/ysyn/p/3484996.html
+	
+	intePM账号密码------------------完成 username:hyk password hyk123
+	Ext.Ajax.request 用法参数介绍---未完成
+	.NET 母版-----------------------完成
+	.NET 登录-----------------------未完成
+	.NET MVC 注解-------------------完成
+	exe严格同步---------------------完成
+	.NET MVC ascx-------------------完成  用户控件	
+		
+	
+	
+	

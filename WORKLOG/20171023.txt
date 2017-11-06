@@ -1,0 +1,35 @@
+星期一
+
+tar:
+	outlook 配置--------------------完成
+	outlook 企业邮箱配置------------未完成
+	尝试smtp 邮件发送---------------未完成									
+	中午 VS 帮助文档安装------------完成
+	上午水印问题--------------------完成	
+	office 文件 自动加密hook -------未完成	
+	请假银行卡，体检----------------完成
+	
+C: telent SMTP.163.com 25  //以telenet方式连接163邮件服务器  
+S: 220 163.com Anti-spam GT for Coremail System //220为响应数字，其后的为欢迎信息  
+C: HELO SMTP.163.com //除了HELO所具有的功能外，EHLO主要用来查询服务器支持的扩充功能   
+S: 250-mail  
+S: 250-AUTH LOGIN PLAIN  
+S: 250-AUTH=LOGIN PLAIN  
+S: 250 8BITMIME //最后一个响应数字应答码之后跟的是一个空格，而不是'-'   
+C: AUTH LOGIN   //请求认证  
+S: 334 dxNlcm5hbWU6  //服务器的响应——经过base64编码了的“Username”=  
+C: Y29zdGFAYW1heGl0Lm5ldA==  //发送经过BASE64编码了的用户名  
+S: 334 UGFzc3dvcmQ6  //经过BASE64编码了的"Password:"=  
+C: MTk4MjIxNA==  //客户端发送的经过BASE64编码了的密码  
+S: 235 auth successfully  //认证成功   
+C: MAIL FROM: bripengandre@163.com  //发送者邮箱  
+S: 250 … .  //“…”代表省略了一些可读信息  
+C: RCPT TO: bripengandre@smail.hust.edu.cn　//接收者邮箱  
+S: 250 … .    // “…”代表省略了一些可读信息  
+C: DATA //请求发送数据  
+S: 354 Enter mail, end with "." on a line by itself  
+C: Enjoy Protocol Studing  
+C: .  
+S: 250 Message sent  
+C: QUIT //退出连接   
+S: 221 Bye  

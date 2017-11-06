@@ -1,0 +1,46 @@
+tar:
+	office 文件 自动加密hook -------未完成
+	DLLinjection--------------------未完成
+	.NET MVC 数据库查询-------------完成 	http://www.jb51.net/article/31982.htm
+	.NET 推送-----------------------完成  	http://blog.csdn.net/kesalin/article/details/8166925
+	.NET 邮件测试-------------------未完成
+	MD5 计算------------------------未完成	
+	修改周报------------------------完成
+	SetTimer控制台定时--------------完成
+	VOID CALLBACK TimerProc(HWND, UINT, UINT, DWORD);
+	int main(int argc, char * argv[])
+	{
+		int ch = 0;
+		int iId;
+		MSG msg;
+		 
+		iId = SetTimer(NULL, ID_TIMER, 3000, TimerProc);
+		 
+		while(GetMessage(&msg, NULL, 0, 0))
+		{
+			DispatchMessage(&msg);
+		}
+		 
+		KillTimer(NULL, iId);
+		 
+		return 0;
+	}
+	 
+	VOID CALLBACK TimerProc(HWND hwnd, UINT message, UINT iTimerID, DWORD dwTimer)
+	{
+		MessageBox(NULL, "Hello World!", "Test", MB_OK);
+	}
+	
+	
+	PPT制作-------------------------未完成
+	APP产品介绍PPT模板
+	预计12页，上午3页
+	系统架构
+	
+	global::System.Int32 uSERID, 
+	global::System.String lOGINNAME, 
+	global::System.String uSERNAME
+	
+	学习通过web端配置系统策略和流程，管理审批。
+	学习通过web端管理用户和角色。
+	学习通过客户端申请修改策略，申请解密流程等。

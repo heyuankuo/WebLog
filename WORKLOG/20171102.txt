@@ -1,0 +1,31 @@
+LOG:多云
+tar: 
+	C++ 中心服务器------------------未完成
+	C++ lock服务器------------------未完成
+	客户观看、退出，只在web端
+	客户坐下 WEB 端推送 
+	客户中途加入--------------------加锁过程中开始位置创建客户资源
+	
+	C++ WEB服务器-------------------未完成
+	office 文件 自动加密hook -------未完成
+	DLLinjection--------------------未完成
+	.NET 邮件测试-------------------未完成
+	MD5 计算------------------------未完成	
+	PPT制作-------------------------未完成
+	ASP.NET 行内代码----------------未完成 
+	
+	NPOI测试------------------------完成 http://www.cnblogs.com/knowledgesea/archive/2012/11/16/2772547.html
+	名称空间 http://www.cnblogs.com/xcj26/archive/2013/02/21/2921316.html
+	http://www.aiuxian.com/article/p-2753551.html
+	
+	C++/CLR 工程调用COM组件测试-----未完成
+	
+	建立一个日志工具 .NET MVC2
+	
+	内存文件映射 的偏移量必须为内存精度的整数倍	dwFileOffsetLow和dwFileOffsetHigh必须反映一个偏移距离，它由系统的内存分配精度决定。例如，假设系统的内存精度是64KB（即最小分配单位是64KB），则这些值必须是64KB的整数倍。大多数应用程序都简单的用零从文件的起始处开始映射。lpBaseAddress也必须是内存分配精度的整数倍
+	
+	ASP.NET WebForm下，显示列表数据，经常会使用服务器控件GridView、DataList等。在ASP.NET MVC Framework中，我们有两种方式进行显示数据，一是使用行内代码，即通过循环视图数据使用<%=%>标记进行呈现；二是使用服务器控件，同样可以把视图数据绑定在服务器控件，如ASP.NET 3.5中的新控件ListView。
+	http://blog.csdn.net/chenindex/article/details/7457995
+	http://www.cnblogs.com/lerit/archive/2010/10/22/1858007.html
+	
+	

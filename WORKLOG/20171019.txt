@@ -1,0 +1,15 @@
+tar:
+
+C++ CDO组件调用发送邮件
+
+CreateProcess 命令行参数测试
+
+创建一个存储过程，稍后测试nvarchar 字符串输入 和 varchar 字符串输入
+
+set ANSI_NULLS ON
+
+cdosys http://blog.csdn.net/naive1010/article/details/178195
+
+tips:
+wgbkburpjqjwjfdb
+phbimywbihnligjb
