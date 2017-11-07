@@ -1,7 +1,36 @@
 tar:
 	添加XLSX文件处理-----------------------------未完成
-	添加文件不存在是的处理-----------------------未完成
-	绑定用户数据---------------------------------未完成
+	添加文件不存在是的处理-----------------------完成
+	绑定用户数据---------------------------------完成
+	检查文件的合法性和完整性
+	
+int ClearTable()
+{
+	if( nullptr != clrSheet ) // 获取到指定sheet
+	{
+		for ( int i = clrSheet->FirstRowNum; i < clrSheet->LastRowNum + 1; i++)
+		{
+			IRow ^clrRow = clrSheet->GetRow(i);
+			if ( nullptr != clrRow )
+			{
+				clrSheet->RemoveRow(clrSheet->GetRow(i));
+			}
+			else // 没有这一行
+			{
+				//跳过	
+			}
+		}
+	}
+	else // 获取指定sheet失败
+	{
+		result = -1;
+		ExceptionLog::InputLog("获取指定sheet失败");
+	}
+}
+
+ISheet ^ clrSheet = m_gcWK->GetSheetAt( stIndex );
+	
+	
 	
 	
 	

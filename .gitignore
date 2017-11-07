@@ -1,2 +1,6 @@
 /BaseHog/Debug/*
+/BaseHog/Release/*
 /BaseHog/*.sdf
+/SubSvr/Debug/*
+/SubSvr/Release/*
+/SubSvr/*.sdf
