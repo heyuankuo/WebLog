@@ -1,0 +1,26 @@
+HKCR
+{
+	HYK.QP.HOG.1 = s 'Hog Class'
+	{
+		CLSID = s '{4E14A166-5C2E-412F-A94B-326FF50A7A59}'
+	}
+	HYK.QP.HOG = s 'Hog Class'
+	{		
+		CurVer = s 'HYK.QP.HOG.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {4E14A166-5C2E-412F-A94B-326FF50A7A59} = s 'Hog Class'
+		{
+			ProgID = s 'HYK.QP.HOG.1'
+			VersionIndependentProgID = s 'HYK.QP.HOG'
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{6C872422-33F7-4CCA-83EF-AAEC36CD6E1A}'
+			Version = s '1.0'
+		}
+	}
+}

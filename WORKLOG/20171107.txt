@@ -1,0 +1,14 @@
+tar:
+	添加XLSX文件处理-----------------------------未完成
+	添加文件不存在是的处理-----------------------未完成
+	绑定用户数据---------------------------------未完成
+	
+	
+	
+	内存泄漏检测
+	#define CRTDBG_MAP_ALLOC
+	#include <stdlib.h>
+	#include <crtdbg.h>
+	
+	_CrtSetBreakAlloc(138);
+	_CrtDumpMemoryLeaks();

@@ -1,0 +1,74 @@
+// BaseHog.idl : BaseHog 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(BaseHog.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+// hs_enable 有效无效
+typedef enum chair_enable
+{
+      CHAIR_DISABLE = 0,  // 无效
+	  CHAIR_ENABLE        // 有效
+}ENUM_CHAIR_ENABLE;
+
+// hs_hot_state 表决
+typedef enum hog_stat
+{
+      HOG_NULL = 0, // 无效
+	  HOG_DOWN,     // 不抢
+	  HOG_UP		// 抢
+}ENUM_HOG_STAT;
+
+// 角色
+typedef enum player_role
+{
+      ROLE_ZHUANG = 0,
+	  ROLE_XIAN
+}ENUM_PLAYER_ROLE;
+
+
+typedef struct _tagChairInfo 
+{
+	ENUM_CHAIR_ENABLE	hs_chair_enable;
+	ENUM_HOG_STAT		hs_hot_state;	// 状态 未定， 叫，不叫
+	ENUM_PLAYER_ROLE	hs_role;		// 角色 未定，闲， 庄
+}ChairInfo, *PChairInfo;
+
+// 座子信息
+typedef struct _tagTableInfo 
+{
+	DWORD	ti_count; // 状态 未定， 叫，不叫
+}TableInfo , *PTableInfo;
+
+[
+	object,
+	uuid(FA6B316E-BAC1-4360-A894-7783B7DF340F),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IHog : IDispatch{
+	[id(1)] HRESULT BindHogData([in] PTableInfo _table, [in] PChairInfo _chairs, [in] LONG chairSum, [in] LONG proCtr);
+	[id(2)] HRESULT InitHogData([in] ENUM_HOG_STAT iniStat);
+	[id(3)] HRESULT WaitForHog([in] ENUM_HOG_STAT _hog);
+};
+[
+	uuid(6C872422-33F7-4CCA-83EF-AAEC36CD6E1A),
+	version(1.0),
+]
+library BaseHogLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(4E14A166-5C2E-412F-A94B-326FF50A7A59)		
+	]
+	coclass Hog
+	{
+		[default] interface IHog;
+	};
+};
+
+import "shobjidl.idl";
