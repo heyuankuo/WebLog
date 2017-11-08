@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Wed Nov 08 17:01:36 2017
+/* at Tue Nov 07 15:16:07 2017
  */
 /* Compiler settings for BaseHog.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -100,17 +100,13 @@ typedef struct _tagChairInfo
     ENUM_CHAIR_ENABLE hs_chair_enable;
     ENUM_HOG_STAT hs_hot_state;
     ENUM_PLAYER_ROLE hs_role;
-    LONGLONG hs_chip;
-    DWORD hs_enableHog;
     } 	ChairInfo;
 
 typedef struct _tagChairInfo *PChairInfo;
 
 typedef struct _tagTableInfo
     {
-    DWORD ti_curCount;
-    DWORD ti_allCount;
-    LONGLONG ti_lowScore;
+    DWORD ti_count;
     } 	TableInfo;
 
 typedef struct _tagTableInfo *PTableInfo;
@@ -144,7 +140,8 @@ EXTERN_C const IID IID_IHog;
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE InitHogData( 
             /* [in] */ ENUM_HOG_STAT iniStat) = 0;
         
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GenerateHog( void) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE WaitForHog( 
+            /* [in] */ ENUM_HOG_STAT _hog) = 0;
         
     };
     
@@ -206,8 +203,9 @@ EXTERN_C const IID IID_IHog;
             IHog * This,
             /* [in] */ ENUM_HOG_STAT iniStat);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GenerateHog )( 
-            IHog * This);
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *WaitForHog )( 
+            IHog * This,
+            /* [in] */ ENUM_HOG_STAT _hog);
         
         END_INTERFACE
     } IHogVtbl;
@@ -251,8 +249,8 @@ EXTERN_C const IID IID_IHog;
 #define IHog_InitHogData(This,iniStat)	\
     ( (This)->lpVtbl -> InitHogData(This,iniStat) ) 
 
-#define IHog_GenerateHog(This)	\
-    ( (This)->lpVtbl -> GenerateHog(This) ) 
+#define IHog_WaitForHog(This,_hog)	\
+    ( (This)->lpVtbl -> WaitForHog(This,_hog) ) 
 
 #endif /* COBJMACROS */
 

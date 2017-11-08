@@ -1,8 +1,8 @@
-// BaseHog.idl : BaseHog 的 IDL 源
+// CenterSvr.idl : CenterSvr 的 IDL 源
 //
 
 // 此文件将由 MIDL 工具处理以
-// 产生类型库(BaseHog.tlb)和封送处理代码。
+// 产生类型库(CenterSvr.tlb)和封送处理代码。
 
 import "oaidl.idl";
 import "ocidl.idl";
@@ -49,29 +49,28 @@ typedef struct _tagTableInfo
 
 [
 	object,
-	uuid(FA6B316E-BAC1-4360-A894-7783B7DF340F),
+	uuid(FDCF44B6-3174-4D8A-B2EF-D9A159474D49),
 	dual,
 	nonextensible,
 	pointer_default(unique)
 ]
-interface IHog : IDispatch{
-	[id(1)] HRESULT BindHogData([in] PTableInfo _table, [in] PChairInfo _chairs, [in] LONG chairSum, [in] LONG proCtr);
-	[id(2)] HRESULT InitHogData([in] ENUM_HOG_STAT iniStat);
-	[id(3)] HRESULT GenerateHog();
+interface IQPServer : IDispatch{
+	[id(1)] HRESULT Hog([in] LONG nTableID, [in] LONG nChairID, [in] ENUM_HOG_STAT _hog);
+	[id(2)] HRESULT CreateSub([in] LONG subType, [out,retval] LONG* tid );
 };
 [
-	uuid(6C872422-33F7-4CCA-83EF-AAEC36CD6E1A),
+	uuid(CC506581-6450-4B04-87C9-D519EA7AFDA9),
 	version(1.0),
 ]
-library BaseHogLib
+library CenterSvrLib
 {
 	importlib("stdole2.tlb");
 	[
-		uuid(4E14A166-5C2E-412F-A94B-326FF50A7A59)		
+		uuid(6370FA5B-0048-4053-B645-036909DDA673)		
 	]
-	coclass Hog
+	coclass QPServer
 	{
-		[default] interface IHog;
+		[default] interface IQPServer;
 	};
 };
 

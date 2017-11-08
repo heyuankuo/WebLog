@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Tue Nov 07 15:16:07 2017
+/* at Wed Nov 08 17:01:36 2017
  */
 /* Compiler settings for BaseHog.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -49,8 +49,8 @@
 
 #include "BaseHog_i.h"
 
-#define TYPE_FORMAT_STRING_SIZE   29                                
-#define PROC_FORMAT_STRING_SIZE   127                               
+#define TYPE_FORMAT_STRING_SIZE   35                                
+#define PROC_FORMAT_STRING_SIZE   121                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   0            
@@ -115,7 +115,7 @@ static const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString =
 /*  2 */	NdrFcLong( 0x0 ),	/* 0 */
 /*  6 */	NdrFcShort( 0x7 ),	/* 7 */
 /*  8 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
-/* 10 */	NdrFcShort( 0x38 ),	/* 56 */
+/* 10 */	NdrFcShort( 0x44 ),	/* 68 */
 /* 12 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 14 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
 			0x5,		/* 5 */
@@ -135,7 +135,7 @@ static const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString =
 
 /* 30 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 32 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 34 */	NdrFcShort( 0x10 ),	/* Type Offset=16 */
+/* 34 */	NdrFcShort( 0x12 ),	/* Type Offset=18 */
 
 	/* Parameter chairSum */
 
@@ -189,35 +189,28 @@ static const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString =
 /* 88 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Procedure WaitForHog */
+	/* Procedure GenerateHog */
 
 /* 90 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
 /* 92 */	NdrFcLong( 0x0 ),	/* 0 */
 /* 96 */	NdrFcShort( 0x9 ),	/* 9 */
-/* 98 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 100 */	NdrFcShort( 0x6 ),	/* 6 */
+/* 98 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 100 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 102 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 104 */	0x44,		/* Oi2 Flags:  has return, has ext, */
-			0x2,		/* 2 */
+			0x1,		/* 1 */
 /* 106 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
 /* 108 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 110 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 112 */	NdrFcShort( 0x0 ),	/* 0 */
 
-	/* Parameter _hog */
-
-/* 114 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
-/* 116 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 118 */	0xd,		/* FC_ENUM16 */
-			0x0,		/* 0 */
-
 	/* Return value */
 
-/* 120 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 122 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 124 */	0x8,		/* FC_LONG */
+/* 114 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 116 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 118 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 			0x0
@@ -234,22 +227,28 @@ static const BaseHog_MIDL_TYPE_FORMAT_STRING BaseHog__MIDL_TypeFormatString =
 /*  4 */	NdrFcShort( 0x2 ),	/* Offset= 2 (6) */
 /*  6 */	
 			0x15,		/* FC_STRUCT */
-			0x3,		/* 3 */
-/*  8 */	NdrFcShort( 0x4 ),	/* 4 */
+			0x7,		/* 7 */
+/*  8 */	NdrFcShort( 0x10 ),	/* 16 */
 /* 10 */	0x8,		/* FC_LONG */
+			0x8,		/* FC_LONG */
+/* 12 */	0xb,		/* FC_HYPER */
 			0x5b,		/* FC_END */
-/* 12 */	
+/* 14 */	
 			0x11, 0x0,	/* FC_RP */
-/* 14 */	NdrFcShort( 0x2 ),	/* Offset= 2 (16) */
-/* 16 */	
+/* 16 */	NdrFcShort( 0x2 ),	/* Offset= 2 (18) */
+/* 18 */	
 			0x1a,		/* FC_BOGUS_STRUCT */
-			0x1,		/* 1 */
-/* 18 */	NdrFcShort( 0xc ),	/* 12 */
-/* 20 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 22 */	NdrFcShort( 0x0 ),	/* Offset= 0 (22) */
-/* 24 */	0xd,		/* FC_ENUM16 */
-			0xd,		/* FC_ENUM16 */
+			0x7,		/* 7 */
+/* 20 */	NdrFcShort( 0x20 ),	/* 32 */
+/* 22 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 24 */	NdrFcShort( 0x0 ),	/* Offset= 0 (24) */
 /* 26 */	0xd,		/* FC_ENUM16 */
+			0xd,		/* FC_ENUM16 */
+/* 28 */	0xd,		/* FC_ENUM16 */
+			0x40,		/* FC_STRUCTPAD4 */
+/* 30 */	0xb,		/* FC_HYPER */
+			0x8,		/* FC_LONG */
+/* 32 */	0x40,		/* FC_STRUCTPAD4 */
 			0x5b,		/* FC_END */
 
 			0x0
@@ -318,7 +317,7 @@ CINTERFACE_PROXY_VTABLE(10) _IHogProxyVtbl =
     0 /* IDispatch_Invoke_Proxy */ ,
     (void *) (INT_PTR) -1 /* IHog::BindHogData */ ,
     (void *) (INT_PTR) -1 /* IHog::InitHogData */ ,
-    (void *) (INT_PTR) -1 /* IHog::WaitForHog */
+    (void *) (INT_PTR) -1 /* IHog::GenerateHog */
 };
 
 

@@ -71,6 +71,9 @@ protected:
 	// 轮抢
 	int TurnHog();
 
+	// 刷新Hog权限
+	int BrushHogEnable( ENUM_HOG_STAT iniStat );
+
 public:
 
 
@@ -79,7 +82,7 @@ public:
 
 	// 初始化数据
 	STDMETHOD(InitHogData)(ENUM_HOG_STAT iniStat);
-	STDMETHOD(WaitForHog)(ENUM_HOG_STAT _hog);
+	STDMETHOD(WaitForHog)(ENUM_HOG_STAT _hog, DWORD nChairID);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(Hog), CHog)

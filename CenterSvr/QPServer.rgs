@@ -1,0 +1,26 @@
+HKCR
+{
+	HYK.QP.CENTERSVR.1 = s 'QPServer Class'
+	{
+		CLSID = s '{6370FA5B-0048-4053-B645-036909DDA673}'
+	}
+	HYK.QP.CENTERSVR = s 'QPServer Class'
+	{		
+		CurVer = s 'HYK.QP.CENTERSVR.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6370FA5B-0048-4053-B645-036909DDA673} = s 'QPServer Class'
+		{
+			ProgID = s 'HYK.QP.CENTERSVR.1'
+			VersionIndependentProgID = s 'HYK.QP.CENTERSVR'
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			TypeLib = s '{CC506581-6450-4B04-87C9-D519EA7AFDA9}'
+			Version = s '1.0'
+		}
+	}
+}

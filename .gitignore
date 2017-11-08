@@ -4,3 +4,6 @@
 /SubSvr/Debug/*
 /SubSvr/Release/*
 /SubSvr/*.sdf
+/CenterSvr/Debug/*
+/CenterSvr/Release/*
+/CenterSvr/*.sdf
