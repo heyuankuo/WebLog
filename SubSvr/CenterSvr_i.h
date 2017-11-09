@@ -4,9 +4,9 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Thu Nov 09 10:26:42 2017
+/* at Thu Nov 09 14:08:49 2017
  */
-/* Compiler settings for BaseHog.idl:
+/* Compiler settings for CenterSvr.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -36,8 +36,8 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __BaseHog_i_h__
-#define __BaseHog_i_h__
+#ifndef __CenterSvr_i_h__
+#define __CenterSvr_i_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
@@ -45,22 +45,22 @@
 
 /* Forward Declarations */ 
 
-#ifndef __IHog_FWD_DEFINED__
-#define __IHog_FWD_DEFINED__
-typedef interface IHog IHog;
-#endif 	/* __IHog_FWD_DEFINED__ */
+#ifndef __IQPServer_FWD_DEFINED__
+#define __IQPServer_FWD_DEFINED__
+typedef interface IQPServer IQPServer;
+#endif 	/* __IQPServer_FWD_DEFINED__ */
 
 
-#ifndef __Hog_FWD_DEFINED__
-#define __Hog_FWD_DEFINED__
+#ifndef __QPServer_FWD_DEFINED__
+#define __QPServer_FWD_DEFINED__
 
 #ifdef __cplusplus
-typedef class Hog Hog;
+typedef class QPServer QPServer;
 #else
-typedef struct Hog Hog;
+typedef struct QPServer QPServer;
 #endif /* __cplusplus */
 
-#endif 	/* __Hog_FWD_DEFINED__ */
+#endif 	/* __QPServer_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -73,7 +73,7 @@ extern "C"{
 #endif 
 
 
-/* interface __MIDL_itf_BaseHog_0000_0000 */
+/* interface __MIDL_itf_CenterSvr_0000_0000 */
 /* [local] */ 
 
 typedef 
@@ -111,75 +111,71 @@ typedef struct _tagTableInfo
     DWORD ti_curCount;
     DWORD ti_allCount;
     LONGLONG ti_lowScore;
-    DWORD ti_hog;
     } 	TableInfo;
 
 typedef struct _tagTableInfo *PTableInfo;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_BaseHog_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_BaseHog_0000_0000_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_CenterSvr_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_CenterSvr_0000_0000_v0_0_s_ifspec;
 
-#ifndef __IHog_INTERFACE_DEFINED__
-#define __IHog_INTERFACE_DEFINED__
+#ifndef __IQPServer_INTERFACE_DEFINED__
+#define __IQPServer_INTERFACE_DEFINED__
 
-/* interface IHog */
+/* interface IQPServer */
 /* [unique][nonextensible][dual][uuid][object] */ 
 
 
-EXTERN_C const IID IID_IHog;
+EXTERN_C const IID IID_IQPServer;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("FA6B316E-BAC1-4360-A894-7783B7DF340F")
-    IHog : public IDispatch
+    MIDL_INTERFACE("FDCF44B6-3174-4D8A-B2EF-D9A159474D49")
+    IQPServer : public IDispatch
     {
     public:
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE BindHogData( 
-            /* [in] */ PTableInfo _table,
-            /* [in] */ PChairInfo _chairs,
-            /* [in] */ LONG chairSum) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Hog( 
+            /* [in] */ LONG nTableID,
+            /* [in] */ LONG nChairID,
+            /* [in] */ ENUM_HOG_STAT _hog) = 0;
         
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE InitHogData( 
-            /* [in] */ ENUM_HOG_STAT iniStat) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GenerateHog( 
-            /* [out] */ BOOL *next,
-            /* [out] */ LONG *_hogID) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE CreateSub( 
+            /* [in] */ LONG subType,
+            /* [in] */ LONG tid) = 0;
         
     };
     
 #else 	/* C style interface */
 
-    typedef struct IHogVtbl
+    typedef struct IQPServerVtbl
     {
         BEGIN_INTERFACE
         
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IHog * This,
+            IQPServer * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             __RPC__deref_out  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IHog * This);
+            IQPServer * This);
         
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            IHog * This);
+            IQPServer * This);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            IHog * This,
+            IQPServer * This,
             /* [out] */ UINT *pctinfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            IHog * This,
+            IQPServer * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
             /* [out] */ ITypeInfo **ppTInfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            IHog * This,
+            IQPServer * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
             /* [range][in] */ UINT cNames,
@@ -187,7 +183,7 @@ EXTERN_C const IID IID_IHog;
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            IHog * This,
+            IQPServer * This,
             /* [in] */ DISPID dispIdMember,
             /* [in] */ REFIID riid,
             /* [in] */ LCID lcid,
@@ -197,27 +193,23 @@ EXTERN_C const IID IID_IHog;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *BindHogData )( 
-            IHog * This,
-            /* [in] */ PTableInfo _table,
-            /* [in] */ PChairInfo _chairs,
-            /* [in] */ LONG chairSum);
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Hog )( 
+            IQPServer * This,
+            /* [in] */ LONG nTableID,
+            /* [in] */ LONG nChairID,
+            /* [in] */ ENUM_HOG_STAT _hog);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *InitHogData )( 
-            IHog * This,
-            /* [in] */ ENUM_HOG_STAT iniStat);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GenerateHog )( 
-            IHog * This,
-            /* [out] */ BOOL *next,
-            /* [out] */ LONG *_hogID);
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *CreateSub )( 
+            IQPServer * This,
+            /* [in] */ LONG subType,
+            /* [in] */ LONG tid);
         
         END_INTERFACE
-    } IHogVtbl;
+    } IQPServerVtbl;
 
-    interface IHog
+    interface IQPServer
     {
-        CONST_VTBL struct IHogVtbl *lpVtbl;
+        CONST_VTBL struct IQPServerVtbl *lpVtbl;
     };
 
     
@@ -225,37 +217,34 @@ EXTERN_C const IID IID_IHog;
 #ifdef COBJMACROS
 
 
-#define IHog_QueryInterface(This,riid,ppvObject)	\
+#define IQPServer_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
-#define IHog_AddRef(This)	\
+#define IQPServer_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
 
-#define IHog_Release(This)	\
+#define IQPServer_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
 
-#define IHog_GetTypeInfoCount(This,pctinfo)	\
+#define IQPServer_GetTypeInfoCount(This,pctinfo)	\
     ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
-#define IHog_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+#define IQPServer_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
     ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
-#define IHog_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+#define IQPServer_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
     ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
-#define IHog_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+#define IQPServer_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define IHog_BindHogData(This,_table,_chairs,chairSum)	\
-    ( (This)->lpVtbl -> BindHogData(This,_table,_chairs,chairSum) ) 
+#define IQPServer_Hog(This,nTableID,nChairID,_hog)	\
+    ( (This)->lpVtbl -> Hog(This,nTableID,nChairID,_hog) ) 
 
-#define IHog_InitHogData(This,iniStat)	\
-    ( (This)->lpVtbl -> InitHogData(This,iniStat) ) 
-
-#define IHog_GenerateHog(This,next,_hogID)	\
-    ( (This)->lpVtbl -> GenerateHog(This,next,_hogID) ) 
+#define IQPServer_CreateSub(This,subType,tid)	\
+    ( (This)->lpVtbl -> CreateSub(This,subType,tid) ) 
 
 #endif /* COBJMACROS */
 
@@ -265,27 +254,27 @@ EXTERN_C const IID IID_IHog;
 
 
 
-#endif 	/* __IHog_INTERFACE_DEFINED__ */
+#endif 	/* __IQPServer_INTERFACE_DEFINED__ */
 
 
 
-#ifndef __BaseHogLib_LIBRARY_DEFINED__
-#define __BaseHogLib_LIBRARY_DEFINED__
+#ifndef __CenterSvrLib_LIBRARY_DEFINED__
+#define __CenterSvrLib_LIBRARY_DEFINED__
 
-/* library BaseHogLib */
+/* library CenterSvrLib */
 /* [version][uuid] */ 
 
 
-EXTERN_C const IID LIBID_BaseHogLib;
+EXTERN_C const IID LIBID_CenterSvrLib;
 
-EXTERN_C const CLSID CLSID_Hog;
+EXTERN_C const CLSID CLSID_QPServer;
 
 #ifdef __cplusplus
 
-class DECLSPEC_UUID("4E14A166-5C2E-412F-A94B-326FF50A7A59")
-Hog;
+class DECLSPEC_UUID("6370FA5B-0048-4053-B645-036909DDA673")
+QPServer;
 #endif
-#endif /* __BaseHogLib_LIBRARY_DEFINED__ */
+#endif /* __CenterSvrLib_LIBRARY_DEFINED__ */
 
 /* Additional Prototypes for ALL interfaces */
 

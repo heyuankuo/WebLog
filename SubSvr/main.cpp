@@ -1,6 +1,7 @@
 #include <iostream>
 #include <objbase.h>
 #include "BaseHog_i.h"
+#include "CenterSvr_i.h"
 
 #define			CHAIRSUM		20
 
@@ -23,13 +24,23 @@ int main(int argc, char *argv[])
 	LPTSTR cmdLine = ::GetCommandLine();
 	swscanf_s( cmdLine, L"mi_hProcCtr:%ld,mi_hRCtr:%ld", (LONG *)&hProcCtr, (LONG *)&hRCtr);
 
-	// 创建Hog接口
+	// 创建CenterSvr 接口
 	IHog *pHog = NULL;
 	HRESULT hr = ::CoCreateInstance(	__uuidof( Hog),
 										NULL,
 										CLSCTX_INPROC_SERVER,
 										__uuidof(IHog),
 										(void **)&pHog);
+
+	// 创建Hog接口
+	IQPServer *pQPSvr = NULL;
+	HRESULT hr = ::CoCreateInstance(	__uuidof( QPServer),
+										NULL,
+										CLSCTX_LOCAL_SERVER,
+										__uuidof(IQPServer),
+										(void **)&pQPSvr);
+
+
 
 	pHog->BindHogData(&tableInfo, chairInfo, CHAIRSUM); // 绑定
 	pHog->InitHogData(HOG_NULL); // Hog复位

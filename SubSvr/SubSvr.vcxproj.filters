@@ -24,10 +24,16 @@
     <ClCompile Include="BaseHog_i.c">
       <Filter>Hog</Filter>
     </ClCompile>
+    <ClCompile Include="CenterSvr_i.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseHog_i.h">
       <Filter>Hog</Filter>
+    </ClInclude>
+    <ClInclude Include="CenterSvr_i.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

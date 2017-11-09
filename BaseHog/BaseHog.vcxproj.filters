@@ -79,5 +79,8 @@
     <Midl Include="BaseHog.idl">
       <Filter>源文件</Filter>
     </Midl>
+    <Midl Include="GameData.idl">
+      <Filter>源文件</Filter>
+    </Midl>
   </ItemGroup>
 </Project>
