@@ -2,23 +2,21 @@
 
 #include "stdafx.h"
 #include "ZySdn.h"
+#include "DataSvr.h"
 
 
 // CZySdn
 
-
-// 查找空闲的座子
-LONG CZySdn::FindFrTable()
+STDMETHODIMP CZySdn::CreateTable(LONG* tableID)
 {
-	LONG tableID = -1;
-	for( int i = 0; i < CENT_TABLESUM; ++i)
-	{
-		if ( FALSE == m_gMsg[i].busy )
-		{
-			m_gMsg[i].busy = TRUE;
-			tableID = i;
-		}
-	}
+	// TODO: 在此添加实现代码
+	*tableID = gloDataSvr.FindFrTable();
+	return S_OK;
+}
 
-	return tableID;
+STDMETHODIMP CZySdn::Hog(LONG tableID, LONG chairID, ENUM_HOG_STAT _hog)
+{
+	// TODO: 在此添加实现代码
+	gloDataSvr.Hog(tableID, chairID, _hog);
+	return S_OK;
 }

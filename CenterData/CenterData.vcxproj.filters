@@ -17,7 +17,10 @@
       <UniqueIdentifier>{96f0579a-562a-45fd-ae88-bca5cd894fe9}</UniqueIdentifier>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="DataClass">
+    <Filter Include="mode">
+      <UniqueIdentifier>{46eeaa66-01ca-4112-b9a5-b328b6225197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="contrl">
       <UniqueIdentifier>{51440ee4-c5d2-42e9-9181-b7689aead4fb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -32,7 +35,10 @@
       <Filter>生成的文件</Filter>
     </ClCompile>
     <ClCompile Include="ZySdn.cpp">
-      <Filter>DataClass</Filter>
+      <Filter>contrl</Filter>
+    </ClCompile>
+    <ClCompile Include="DataSvr.cpp">
+      <Filter>mode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,7 +55,10 @@
       <Filter>生成的文件</Filter>
     </ClInclude>
     <ClInclude Include="ZySdn.h">
-      <Filter>DataClass</Filter>
+      <Filter>contrl</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSvr.h">
+      <Filter>mode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

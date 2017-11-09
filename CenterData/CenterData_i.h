@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Thu Nov 09 11:13:59 2017
+/* at Thu Nov 09 14:28:27 2017
  */
 /* Compiler settings for CenterData.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -135,6 +135,14 @@ EXTERN_C const IID IID_IZySdn;
     IZySdn : public IDispatch
     {
     public:
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE CreateTable( 
+            /* [retval][out] */ LONG *tableID) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Hog( 
+            /* [in] */ LONG tableID,
+            /* [in] */ LONG chairID,
+            /* [in] */ ENUM_HOG_STAT _hog) = 0;
+        
     };
     
 #else 	/* C style interface */
@@ -184,6 +192,16 @@ EXTERN_C const IID IID_IZySdn;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )( 
+            IZySdn * This,
+            /* [retval][out] */ LONG *tableID);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Hog )( 
+            IZySdn * This,
+            /* [in] */ LONG tableID,
+            /* [in] */ LONG chairID,
+            /* [in] */ ENUM_HOG_STAT _hog);
+        
         END_INTERFACE
     } IZySdnVtbl;
 
@@ -219,6 +237,12 @@ EXTERN_C const IID IID_IZySdn;
 #define IZySdn_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
+
+#define IZySdn_CreateTable(This,tableID)	\
+    ( (This)->lpVtbl -> CreateTable(This,tableID) ) 
+
+#define IZySdn_Hog(This,tableID,chairID,_hog)	\
+    ( (This)->lpVtbl -> Hog(This,tableID,chairID,_hog) ) 
 
 #endif /* COBJMACROS */
 

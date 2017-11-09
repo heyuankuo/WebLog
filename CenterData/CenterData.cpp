@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "resource.h"
 #include "CenterData_i.h"
+#include "DataSvr.h"
 
 
 
