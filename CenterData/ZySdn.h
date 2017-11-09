@@ -1,11 +1,19 @@
-// QPServer.h : CQPServer 的声明
+// ZySdn.h : CZySdn 的声明
 
 #pragma once
 #include "resource.h"       // 主符号
 
 
 
-#include "CenterSvr_i.h"
+#include "CenterData_i.h"
+#define		CENT_TABLESUM		20
+typedef struct _tagMsgInfo
+{
+	DWORD busy;		// TRUE--占用 FALSE--空闲
+	DWORD nChairID;
+	ENUM_HOG_STAT _hog;
+
+}MsgInfo, *PMsgInfo;
 
 
 #if defined(_WIN32_WCE) && !defined(_CE_DCOM) && !defined(_CE_ALLOW_SINGLE_THREADED_OBJECTS_IN_MTA)
@@ -15,23 +23,23 @@
 using namespace ATL;
 
 
-// CQPServer
+// CZySdn
 
-class ATL_NO_VTABLE CQPServer :
+class ATL_NO_VTABLE CZySdn :
 	public CComObjectRootEx<CComSingleThreadModel>,
-	public CComCoClass<CQPServer, &CLSID_QPServer>,
-	public IDispatchImpl<IQPServer, &IID_IQPServer, &LIBID_CenterSvrLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
+	public CComCoClass<CZySdn, &CLSID_ZySdn>,
+	public IDispatchImpl<IZySdn, &IID_IZySdn, &LIBID_CenterDataLib, /*wMajor =*/ 1, /*wMinor =*/ 0>
 {
 public:
-	CQPServer()
+	CZySdn()
 	{
 	}
 
-DECLARE_REGISTRY_RESOURCEID(IDR_QPSERVER)
+DECLARE_REGISTRY_RESOURCEID(IDR_ZYSDN)
 
 
-BEGIN_COM_MAP(CQPServer)
-	COM_INTERFACE_ENTRY(IQPServer)
+BEGIN_COM_MAP(CZySdn)
+	COM_INTERFACE_ENTRY(IZySdn)
 	COM_INTERFACE_ENTRY(IDispatch)
 END_COM_MAP()
 
@@ -48,15 +56,17 @@ END_COM_MAP()
 	{
 	}
 
-// msgdata
-protected:	
+protected:
+	// 查找空闲
+	LONG FindFrTable();
+
+protected:
+	MsgInfo m_gMsg[CENT_TABLESUM];
 
 public:
 
 
 
-	STDMETHOD(Hog)(LONG nTableID, LONG nChairID, ENUM_HOG_STAT _hog);
-	STDMETHOD(CreateSub)(LONG subType, LONG tid);
 };
 
-OBJECT_ENTRY_AUTO(__uuidof(QPServer), CQPServer)
+OBJECT_ENTRY_AUTO(__uuidof(ZySdn), CZySdn)

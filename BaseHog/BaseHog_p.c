@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Wed Nov 08 17:01:36 2017
+/* at Thu Nov 09 10:26:42 2017
  */
 /* Compiler settings for BaseHog.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -49,8 +49,8 @@
 
 #include "BaseHog_i.h"
 
-#define TYPE_FORMAT_STRING_SIZE   35                                
-#define PROC_FORMAT_STRING_SIZE   121                               
+#define TYPE_FORMAT_STRING_SIZE   45                                
+#define PROC_FORMAT_STRING_SIZE   127                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   0            
@@ -114,11 +114,11 @@ static const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString =
 			0x6c,		/* Old Flags:  object, Oi2 */
 /*  2 */	NdrFcLong( 0x0 ),	/* 0 */
 /*  6 */	NdrFcShort( 0x7 ),	/* 7 */
-/*  8 */	NdrFcShort( 0x18 ),	/* x86 Stack size/offset = 24 */
-/* 10 */	NdrFcShort( 0x44 ),	/* 68 */
+/*  8 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
+/* 10 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 12 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 14 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
-			0x5,		/* 5 */
+			0x4,		/* 4 */
 /* 16 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
 /* 18 */	NdrFcShort( 0x0 ),	/* 0 */
@@ -127,7 +127,7 @@ static const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString =
 
 	/* Parameter _table */
 
-/* 24 */	NdrFcShort( 0x10a ),	/* Flags:  must free, in, simple ref, */
+/* 24 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 26 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
 /* 28 */	NdrFcShort( 0x6 ),	/* Type Offset=6 */
 
@@ -135,7 +135,7 @@ static const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString =
 
 /* 30 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 32 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 34 */	NdrFcShort( 0x12 ),	/* Type Offset=18 */
+/* 34 */	NdrFcShort( 0x18 ),	/* Type Offset=24 */
 
 	/* Parameter chairSum */
 
@@ -144,73 +144,80 @@ static const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString =
 /* 40 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Parameter proCtr */
+	/* Return value */
 
-/* 42 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 42 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
 /* 44 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
 /* 46 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Return value */
-
-/* 48 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 50 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
-/* 52 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
-
 	/* Procedure InitHogData */
 
-/* 54 */	0x33,		/* FC_AUTO_HANDLE */
+/* 48 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
-/* 56 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 50 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 54 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 56 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 58 */	NdrFcShort( 0x6 ),	/* 6 */
 /* 60 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 62 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 64 */	NdrFcShort( 0x6 ),	/* 6 */
-/* 66 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 68 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+/* 62 */	0x44,		/* Oi2 Flags:  has return, has ext, */
 			0x2,		/* 2 */
-/* 70 */	0x8,		/* 8 */
+/* 64 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
-/* 72 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 74 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 76 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 66 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 68 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 70 */	NdrFcShort( 0x0 ),	/* 0 */
 
 	/* Parameter iniStat */
 
-/* 78 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
-/* 80 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 82 */	0xd,		/* FC_ENUM16 */
+/* 72 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 74 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 76 */	0xd,		/* FC_ENUM16 */
 			0x0,		/* 0 */
 
 	/* Return value */
 
-/* 84 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 86 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 88 */	0x8,		/* FC_LONG */
+/* 78 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 80 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 82 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Procedure GenerateHog */
 
-/* 90 */	0x33,		/* FC_AUTO_HANDLE */
+/* 84 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
-/* 92 */	NdrFcLong( 0x0 ),	/* 0 */
-/* 96 */	NdrFcShort( 0x9 ),	/* 9 */
-/* 98 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 100 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 102 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 104 */	0x44,		/* Oi2 Flags:  has return, has ext, */
-			0x1,		/* 1 */
-/* 106 */	0x8,		/* 8 */
+/* 86 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 90 */	NdrFcShort( 0x9 ),	/* 9 */
+/* 92 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
+/* 94 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 96 */	NdrFcShort( 0x40 ),	/* 64 */
+/* 98 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+			0x3,		/* 3 */
+/* 100 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
-/* 108 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 110 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 112 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 102 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 104 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 106 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter next */
+
+/* 108 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 110 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 112 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Parameter _hogID */
+
+/* 114 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 116 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 118 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
 
 	/* Return value */
 
-/* 114 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 116 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 118 */	0x8,		/* FC_LONG */
+/* 120 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 122 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 124 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 			0x0
@@ -226,30 +233,38 @@ static const BaseHog_MIDL_TYPE_FORMAT_STRING BaseHog__MIDL_TypeFormatString =
 			0x11, 0x0,	/* FC_RP */
 /*  4 */	NdrFcShort( 0x2 ),	/* Offset= 2 (6) */
 /*  6 */	
-			0x15,		/* FC_STRUCT */
-			0x7,		/* 7 */
-/*  8 */	NdrFcShort( 0x10 ),	/* 16 */
-/* 10 */	0x8,		/* FC_LONG */
-			0x8,		/* FC_LONG */
-/* 12 */	0xb,		/* FC_HYPER */
-			0x5b,		/* FC_END */
-/* 14 */	
-			0x11, 0x0,	/* FC_RP */
-/* 16 */	NdrFcShort( 0x2 ),	/* Offset= 2 (18) */
-/* 18 */	
 			0x1a,		/* FC_BOGUS_STRUCT */
 			0x7,		/* 7 */
-/* 20 */	NdrFcShort( 0x20 ),	/* 32 */
-/* 22 */	NdrFcShort( 0x0 ),	/* 0 */
-/* 24 */	NdrFcShort( 0x0 ),	/* Offset= 0 (24) */
-/* 26 */	0xd,		/* FC_ENUM16 */
-			0xd,		/* FC_ENUM16 */
-/* 28 */	0xd,		/* FC_ENUM16 */
-			0x40,		/* FC_STRUCTPAD4 */
-/* 30 */	0xb,		/* FC_HYPER */
+/*  8 */	NdrFcShort( 0x18 ),	/* 24 */
+/* 10 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 12 */	NdrFcShort( 0x0 ),	/* Offset= 0 (12) */
+/* 14 */	0x8,		/* FC_LONG */
 			0x8,		/* FC_LONG */
-/* 32 */	0x40,		/* FC_STRUCTPAD4 */
+/* 16 */	0xb,		/* FC_HYPER */
+			0x8,		/* FC_LONG */
+/* 18 */	0x40,		/* FC_STRUCTPAD4 */
 			0x5b,		/* FC_END */
+/* 20 */	
+			0x11, 0x0,	/* FC_RP */
+/* 22 */	NdrFcShort( 0x2 ),	/* Offset= 2 (24) */
+/* 24 */	
+			0x1a,		/* FC_BOGUS_STRUCT */
+			0x7,		/* 7 */
+/* 26 */	NdrFcShort( 0x20 ),	/* 32 */
+/* 28 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 30 */	NdrFcShort( 0x0 ),	/* Offset= 0 (30) */
+/* 32 */	0xd,		/* FC_ENUM16 */
+			0xd,		/* FC_ENUM16 */
+/* 34 */	0xd,		/* FC_ENUM16 */
+			0x40,		/* FC_STRUCTPAD4 */
+/* 36 */	0xb,		/* FC_HYPER */
+			0x8,		/* FC_LONG */
+/* 38 */	0x40,		/* FC_STRUCTPAD4 */
+			0x5b,		/* FC_END */
+/* 40 */	
+			0x11, 0xc,	/* FC_RP [alloced_on_stack] [simple_pointer] */
+/* 42 */	0x8,		/* FC_LONG */
+			0x5c,		/* FC_PAD */
 
 			0x0
         }
@@ -279,8 +294,8 @@ static const unsigned short IHog_FormatStringOffsetTable[] =
     (unsigned short) -1,
     (unsigned short) -1,
     0,
-    54,
-    90
+    48,
+    84
     };
 
 static const MIDL_STUBLESS_PROXY_INFO IHog_ProxyInfo =

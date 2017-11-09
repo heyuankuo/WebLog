@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include "DataSvr.h"
-#define			PRO_PATH		L"E:\project\VC++\EXCEL_NPOI\Demo\Debug\SubSvr.exe"
+#define			PRO_PATH		L"E:\\project\\VC++\\EXCEL_NPOI\\Demo\\Debug\\SubSvr.exe"
 
 DataSvr::DataSvr(void)
 {
@@ -9,23 +9,6 @@ DataSvr::DataSvr(void)
 
 DataSvr::~DataSvr(void)
 {
-}
-
-// 查找空闲的座子
-LONG DataSvr::FindFrTable()
-{
-	LONG tableID = -1;
-	for( int i = 0; i < CENT_TABLESUM; ++i)
-	{
-		if ( FALSE == m_gMsg[i].busy )
-		{
-			tableID = i;
-		}
-	}
-
-	InitCtrHandle( tableID ); // 初始化
-
-	return tableID;
 }
 
 // 初始化控件句柄

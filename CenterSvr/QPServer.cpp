@@ -17,10 +17,10 @@ STDMETHODIMP CQPServer::Hog(LONG nTableID, LONG nChairID, ENUM_HOG_STAT _hog)
 }
 
 
-STDMETHODIMP CQPServer::CreateSub(LONG subType, LONG* tid)
+STDMETHODIMP CQPServer::CreateSub(LONG subType, LONG tid)
 {
 	// TODO: 在此添加实现代码
-	*tid = gloDataSvr.FindFrTable(); // 查询空余桌子
+	gloDataSvr.CreateSub(tid); // 查询空余桌子
 
 	return S_OK;
 }

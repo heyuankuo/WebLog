@@ -4,9 +4,9 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Thu Nov 09 10:26:42 2017
+/* at Thu Nov 09 11:13:59 2017
  */
-/* Compiler settings for BaseHog.idl:
+/* Compiler settings for CenterData.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -36,8 +36,8 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __BaseHog_i_h__
-#define __BaseHog_i_h__
+#ifndef __CenterData_i_h__
+#define __CenterData_i_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
@@ -45,22 +45,22 @@
 
 /* Forward Declarations */ 
 
-#ifndef __IHog_FWD_DEFINED__
-#define __IHog_FWD_DEFINED__
-typedef interface IHog IHog;
-#endif 	/* __IHog_FWD_DEFINED__ */
+#ifndef __IZySdn_FWD_DEFINED__
+#define __IZySdn_FWD_DEFINED__
+typedef interface IZySdn IZySdn;
+#endif 	/* __IZySdn_FWD_DEFINED__ */
 
 
-#ifndef __Hog_FWD_DEFINED__
-#define __Hog_FWD_DEFINED__
+#ifndef __ZySdn_FWD_DEFINED__
+#define __ZySdn_FWD_DEFINED__
 
 #ifdef __cplusplus
-typedef class Hog Hog;
+typedef class ZySdn ZySdn;
 #else
-typedef struct Hog Hog;
+typedef struct ZySdn ZySdn;
 #endif /* __cplusplus */
 
-#endif 	/* __Hog_FWD_DEFINED__ */
+#endif 	/* __ZySdn_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -73,7 +73,7 @@ extern "C"{
 #endif 
 
 
-/* interface __MIDL_itf_BaseHog_0000_0000 */
+/* interface __MIDL_itf_CenterData_0000_0000 */
 /* [local] */ 
 
 typedef 
@@ -111,75 +111,62 @@ typedef struct _tagTableInfo
     DWORD ti_curCount;
     DWORD ti_allCount;
     LONGLONG ti_lowScore;
-    DWORD ti_hog;
     } 	TableInfo;
 
 typedef struct _tagTableInfo *PTableInfo;
 
 
 
-extern RPC_IF_HANDLE __MIDL_itf_BaseHog_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_BaseHog_0000_0000_v0_0_s_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_CenterData_0000_0000_v0_0_c_ifspec;
+extern RPC_IF_HANDLE __MIDL_itf_CenterData_0000_0000_v0_0_s_ifspec;
 
-#ifndef __IHog_INTERFACE_DEFINED__
-#define __IHog_INTERFACE_DEFINED__
+#ifndef __IZySdn_INTERFACE_DEFINED__
+#define __IZySdn_INTERFACE_DEFINED__
 
-/* interface IHog */
+/* interface IZySdn */
 /* [unique][nonextensible][dual][uuid][object] */ 
 
 
-EXTERN_C const IID IID_IHog;
+EXTERN_C const IID IID_IZySdn;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("FA6B316E-BAC1-4360-A894-7783B7DF340F")
-    IHog : public IDispatch
+    MIDL_INTERFACE("59D8A9ED-F59B-445C-9685-22CD38469884")
+    IZySdn : public IDispatch
     {
     public:
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE BindHogData( 
-            /* [in] */ PTableInfo _table,
-            /* [in] */ PChairInfo _chairs,
-            /* [in] */ LONG chairSum) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE InitHogData( 
-            /* [in] */ ENUM_HOG_STAT iniStat) = 0;
-        
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GenerateHog( 
-            /* [out] */ BOOL *next,
-            /* [out] */ LONG *_hogID) = 0;
-        
     };
     
 #else 	/* C style interface */
 
-    typedef struct IHogVtbl
+    typedef struct IZySdnVtbl
     {
         BEGIN_INTERFACE
         
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IHog * This,
+            IZySdn * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             __RPC__deref_out  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IHog * This);
+            IZySdn * This);
         
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            IHog * This);
+            IZySdn * This);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            IHog * This,
+            IZySdn * This,
             /* [out] */ UINT *pctinfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            IHog * This,
+            IZySdn * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
             /* [out] */ ITypeInfo **ppTInfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            IHog * This,
+            IZySdn * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
             /* [range][in] */ UINT cNames,
@@ -187,7 +174,7 @@ EXTERN_C const IID IID_IHog;
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            IHog * This,
+            IZySdn * This,
             /* [in] */ DISPID dispIdMember,
             /* [in] */ REFIID riid,
             /* [in] */ LCID lcid,
@@ -197,27 +184,12 @@ EXTERN_C const IID IID_IHog;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *BindHogData )( 
-            IHog * This,
-            /* [in] */ PTableInfo _table,
-            /* [in] */ PChairInfo _chairs,
-            /* [in] */ LONG chairSum);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *InitHogData )( 
-            IHog * This,
-            /* [in] */ ENUM_HOG_STAT iniStat);
-        
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GenerateHog )( 
-            IHog * This,
-            /* [out] */ BOOL *next,
-            /* [out] */ LONG *_hogID);
-        
         END_INTERFACE
-    } IHogVtbl;
+    } IZySdnVtbl;
 
-    interface IHog
+    interface IZySdn
     {
-        CONST_VTBL struct IHogVtbl *lpVtbl;
+        CONST_VTBL struct IZySdnVtbl *lpVtbl;
     };
 
     
@@ -225,37 +197,28 @@ EXTERN_C const IID IID_IHog;
 #ifdef COBJMACROS
 
 
-#define IHog_QueryInterface(This,riid,ppvObject)	\
+#define IZySdn_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
-#define IHog_AddRef(This)	\
+#define IZySdn_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
 
-#define IHog_Release(This)	\
+#define IZySdn_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
 
-#define IHog_GetTypeInfoCount(This,pctinfo)	\
+#define IZySdn_GetTypeInfoCount(This,pctinfo)	\
     ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
-#define IHog_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+#define IZySdn_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
     ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
-#define IHog_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+#define IZySdn_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
     ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
-#define IHog_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+#define IZySdn_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
-
-#define IHog_BindHogData(This,_table,_chairs,chairSum)	\
-    ( (This)->lpVtbl -> BindHogData(This,_table,_chairs,chairSum) ) 
-
-#define IHog_InitHogData(This,iniStat)	\
-    ( (This)->lpVtbl -> InitHogData(This,iniStat) ) 
-
-#define IHog_GenerateHog(This,next,_hogID)	\
-    ( (This)->lpVtbl -> GenerateHog(This,next,_hogID) ) 
 
 #endif /* COBJMACROS */
 
@@ -265,27 +228,27 @@ EXTERN_C const IID IID_IHog;
 
 
 
-#endif 	/* __IHog_INTERFACE_DEFINED__ */
+#endif 	/* __IZySdn_INTERFACE_DEFINED__ */
 
 
 
-#ifndef __BaseHogLib_LIBRARY_DEFINED__
-#define __BaseHogLib_LIBRARY_DEFINED__
+#ifndef __CenterDataLib_LIBRARY_DEFINED__
+#define __CenterDataLib_LIBRARY_DEFINED__
 
-/* library BaseHogLib */
+/* library CenterDataLib */
 /* [version][uuid] */ 
 
 
-EXTERN_C const IID LIBID_BaseHogLib;
+EXTERN_C const IID LIBID_CenterDataLib;
 
-EXTERN_C const CLSID CLSID_Hog;
+EXTERN_C const CLSID CLSID_ZySdn;
 
 #ifdef __cplusplus
 
-class DECLSPEC_UUID("4E14A166-5C2E-412F-A94B-326FF50A7A59")
-Hog;
+class DECLSPEC_UUID("EA23FE32-4B93-478B-B2A8-7681BFA1EEB2")
+ZySdn;
 #endif
-#endif /* __BaseHogLib_LIBRARY_DEFINED__ */
+#endif /* __CenterDataLib_LIBRARY_DEFINED__ */
 
 /* Additional Prototypes for ALL interfaces */
 

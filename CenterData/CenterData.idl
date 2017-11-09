@@ -1,8 +1,8 @@
-// BaseHog.idl : BaseHog 的 IDL 源
+// CenterData.idl : CenterData 的 IDL 源
 //
 
 // 此文件将由 MIDL 工具处理以
-// 产生类型库(BaseHog.tlb)和封送处理代码。
+// 产生类型库(CenterData.tlb)和封送处理代码。
 
 import "oaidl.idl";
 import "ocidl.idl";
@@ -36,43 +36,40 @@ typedef struct _tagChairInfo
 	ENUM_HOG_STAT		hs_hot_state;	// 状态 未定， 叫，不叫
 	ENUM_PLAYER_ROLE	hs_role;		// 角色 未定，闲， 庄
 	LONGLONG			hs_chip;		// 筹
-	DWORD				hs_enableHog;	// 能否Hog  FALSE--不能， TRUE---能, 根据底分限制
+	DWORD				hs_enableHog;	// 能否Hog  FALSE--不能， TRUE---能
 }ChairInfo, *PChairInfo;
 
 // 座子信息
 typedef struct _tagTableInfo 
 {
-	DWORD		ti_curCount; // 当前局数
-	DWORD		ti_allCount; // 总局数
-	LONGLONG	ti_lowScore; // 底分
-	DWORD		ti_hog;		// 当前hog
+	DWORD	ti_curCount; // 当前局数
+	DWORD	ti_allCount; // 总局数
+	LONGLONG ti_lowScore; // 底分
 }TableInfo , *PTableInfo;
+
 
 [
 	object,
-	uuid(FA6B316E-BAC1-4360-A894-7783B7DF340F),
+	uuid(59D8A9ED-F59B-445C-9685-22CD38469884),
 	dual,
 	nonextensible,
 	pointer_default(unique)
 ]
-interface IHog : IDispatch{
-	[id(1)] HRESULT BindHogData([in] PTableInfo _table, [in] PChairInfo _chairs, [in] LONG chairSum);
-	[id(2)] HRESULT InitHogData([in] ENUM_HOG_STAT iniStat);
-	[id(3)] HRESULT GenerateHog( [out] BOOL *next, [out] LONG *_hogID );
+interface IZySdn : IDispatch{
 };
 [
-	uuid(6C872422-33F7-4CCA-83EF-AAEC36CD6E1A),
+	uuid(9A0A0330-53C9-4BE8-AA74-6023CE0D1D37),
 	version(1.0),
 ]
-library BaseHogLib
+library CenterDataLib
 {
 	importlib("stdole2.tlb");
 	[
-		uuid(4E14A166-5C2E-412F-A94B-326FF50A7A59)		
+		uuid(EA23FE32-4B93-478B-B2A8-7681BFA1EEB2)		
 	]
-	coclass Hog
+	coclass ZySdn
 	{
-		[default] interface IHog;
+		[default] interface IZySdn;
 	};
 };
 

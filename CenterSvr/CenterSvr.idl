@@ -56,7 +56,7 @@ typedef struct _tagTableInfo
 ]
 interface IQPServer : IDispatch{
 	[id(1)] HRESULT Hog([in] LONG nTableID, [in] LONG nChairID, [in] ENUM_HOG_STAT _hog);
-	[id(2)] HRESULT CreateSub([in] LONG subType, [out,retval] LONG* tid );
+	[id(2)] HRESULT CreateSub([in] LONG subType, [in] LONG tid );
 };
 [
 	uuid(CC506581-6450-4B04-87C9-D519EA7AFDA9),

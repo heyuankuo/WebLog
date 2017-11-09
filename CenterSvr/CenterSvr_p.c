@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Wed Nov 08 15:59:42 2017
+/* at Thu Nov 09 11:43:46 2017
  */
 /* Compiler settings for CenterSvr.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -49,7 +49,7 @@
 
 #include "CenterSvr_i.h"
 
-#define TYPE_FORMAT_STRING_SIZE   7                                 
+#define TYPE_FORMAT_STRING_SIZE   3                                 
 #define PROC_FORMAT_STRING_SIZE   91                                
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
@@ -160,8 +160,8 @@ static const CenterSvr_MIDL_PROC_FORMAT_STRING CenterSvr__MIDL_ProcFormatString 
 /* 50 */	NdrFcLong( 0x0 ),	/* 0 */
 /* 54 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 56 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
-/* 58 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 60 */	NdrFcShort( 0x24 ),	/* 36 */
+/* 58 */	NdrFcShort( 0x10 ),	/* 16 */
+/* 60 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 62 */	0x44,		/* Oi2 Flags:  has return, has ext, */
 			0x3,		/* 3 */
 /* 64 */	0x8,		/* 8 */
@@ -179,7 +179,7 @@ static const CenterSvr_MIDL_PROC_FORMAT_STRING CenterSvr__MIDL_ProcFormatString 
 
 	/* Parameter tid */
 
-/* 78 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 78 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
 /* 80 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
 /* 82 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
@@ -200,10 +200,6 @@ static const CenterSvr_MIDL_TYPE_FORMAT_STRING CenterSvr__MIDL_TypeFormatString 
         0,
         {
 			NdrFcShort( 0x0 ),	/* 0 */
-/*  2 */	
-			0x11, 0xc,	/* FC_RP [alloced_on_stack] [simple_pointer] */
-/*  4 */	0x8,		/* FC_LONG */
-			0x5c,		/* FC_PAD */
 
 			0x0
         }

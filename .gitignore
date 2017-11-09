@@ -7,3 +7,6 @@
 /CenterSvr/Debug/*
 /CenterSvr/Release/*
 /CenterSvr/*.sdf
+/CenterData/Debug/*
+/CenterData/Release/*
+/CenterData/*.sdf

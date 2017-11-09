@@ -58,19 +58,24 @@ BOOL CHog::NextHog( int *nextHog)
 	return isOK;
 }
 
-// 间断数组随机选择函数
+/** 
+ * 间断数据随机选择
+ * 返回选择的结果
+ * 注意，此处限定条件为估计（即仅为有效性验证，若有其他限定，自行添加）
+ */
 int CHog::GetBanker()
 {
 	// 获取随机数
-	int cursum = GetCurPSum();
-	int rdsum = GenRand( 0, cursum );
+	int result = -1;
+	int cursum = GetCurPSum(); // 有效数
+	int rdsum = GenRand( 0, cursum ); // 有效数内的随机数
 	for( int i = 0; i < cursum; )
 	{
 		if ( CHAIR_ENABLE == m_pChairs[i].hs_chair_enable) // 有效用户
 		{
 			if ( rdsum == i ) // 命中
 			{
-				
+				result = i;
 			}
 			else
 			{
@@ -82,7 +87,8 @@ int CHog::GetBanker()
 			continue;
 		}
 	}
-	return 0;
+
+	return result;
 }
 
 // 轮抢
@@ -118,7 +124,7 @@ int CHog::BrushHogEnable( ENUM_HOG_STAT iniStat )
 	return 0;
 }
 
-STDMETHODIMP CHog::BindHogData(PTableInfo _table, PChairInfo _chairs, LONG chairSum, LONG proCtr)
+STDMETHODIMP CHog::BindHogData(PTableInfo _table, PChairInfo _chairs, LONG chairSum)
 {
 	// TODO: 在此添加实现代码
 	if ( NULL == _chairs ||
@@ -129,10 +135,8 @@ STDMETHODIMP CHog::BindHogData(PTableInfo _table, PChairInfo _chairs, LONG chair
 	m_table = _table;
 	m_pChairs = _chairs;
 	m_ChairSum = chairSum;
-	m_hProCtr = (HANDLE)proCtr;
 	return S_OK;
 }
-
 
 STDMETHODIMP CHog::InitHogData(ENUM_HOG_STAT iniStat)
 {
@@ -141,33 +145,24 @@ STDMETHODIMP CHog::InitHogData(ENUM_HOG_STAT iniStat)
 	return S_OK;
 }
 
-
-STDMETHODIMP CHog::WaitForHog(ENUM_HOG_STAT _hog, DWORD nChairID)
+/**
+ * 若未命中，next 返回 -1
+ */
+STDMETHODIMP CHog::GenerateHog(BOOL *next, LONG *_hogID)
 {
 	// TODO: 在此添加实现代码
-	for ( ;; )
+	int nextID = 0;
+	BOOL hasNext = NextHog( &nextID);
+	if ( TRUE == hasNext) // 返回未表决用户
 	{
-		if ( CHAIR_DISABLE == m_pChairs[nChairID].hs_chair_enable ) // 有效
-		{
-			m_pChairs[nChairID].hs_hot_state = _hog;
-
-			int nextID = 0;
-			BOOL hasNext = NextHog( &nextID);
-			if ( TRUE == hasNext) // 继续等待
-			{
-				continue;
-			}
-			else // 开始计算hogID
-			{
-				break;
-			}
-			
-		}
-		else // 无效 
-		{
-			// 什么也不做
-			continue;
-		}
+		*next = hasNext;
+		*_hogID = nextID;
 	}
+	else // 计算hogID并返回
+	{
+		*_hogID = GetBanker();
+		m_table->ti_hog = *_hogID;
+		*next	= FALSE;
+	}	
 	return S_OK;
 }

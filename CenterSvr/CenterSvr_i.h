@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Wed Nov 08 15:59:42 2017
+/* at Thu Nov 09 11:43:46 2017
  */
 /* Compiler settings for CenterSvr.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -142,7 +142,7 @@ EXTERN_C const IID IID_IQPServer;
         
         virtual /* [id] */ HRESULT STDMETHODCALLTYPE CreateSub( 
             /* [in] */ LONG subType,
-            /* [retval][out] */ LONG *tid) = 0;
+            /* [in] */ LONG tid) = 0;
         
     };
     
@@ -202,7 +202,7 @@ EXTERN_C const IID IID_IQPServer;
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *CreateSub )( 
             IQPServer * This,
             /* [in] */ LONG subType,
-            /* [retval][out] */ LONG *tid);
+            /* [in] */ LONG tid);
         
         END_INTERFACE
     } IQPServerVtbl;

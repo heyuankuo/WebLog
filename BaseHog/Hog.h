@@ -78,11 +78,11 @@ public:
 
 
 	// 绑定数据
-	STDMETHOD(BindHogData)(PTableInfo _table, PChairInfo _chairs, LONG chairSum, LONG proCtr);
+	STDMETHOD(BindHogData)(PTableInfo _table, PChairInfo _chairs, LONG chairSum);
 
 	// 初始化数据
 	STDMETHOD(InitHogData)(ENUM_HOG_STAT iniStat);
-	STDMETHOD(WaitForHog)(ENUM_HOG_STAT _hog, DWORD nChairID);
+	STDMETHOD(GenerateHog)(BOOL *next, LONG *_hogID);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(Hog), CHog)

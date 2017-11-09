@@ -1,0 +1,26 @@
+HKCR
+{
+	ZY.GM.SDN.1 = s 'ZySdn Class'
+	{
+		CLSID = s '{EA23FE32-4B93-478B-B2A8-7681BFA1EEB2}'
+	}
+	ZY.GM.SDN = s 'ZySdn Class'
+	{		
+		CurVer = s 'ZY.GM.SDN.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {EA23FE32-4B93-478B-B2A8-7681BFA1EEB2} = s 'ZySdn Class'
+		{
+			ProgID = s 'ZY.GM.SDN.1'
+			VersionIndependentProgID = s 'ZY.GM.SDN'
+			ForceRemove Programmable
+			LocalServer32 = s '%MODULE%'
+			{
+				val ServerExecutable = s '%MODULE_RAW%'
+			}
+			TypeLib = s '{9A0A0330-53C9-4BE8-AA74-6023CE0D1D37}'
+			Version = s '1.0'
+		}
+	}
+}
