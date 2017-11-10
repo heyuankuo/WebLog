@@ -1,3 +1,4 @@
+#pragma comment(linker,"/subsystem:\"Windows\" /entry:\"mainCRTStartup\"")
 #include <iostream>
 #include <objbase.h>
 #include "GameData.h"
@@ -44,13 +45,14 @@ int main(int argc, char *argv[])
 	pHog->BindHogData(&tableInfo, chairInfo, CHAIRSUM); // 绑定
 	pHog->InitHogData(HOG_NULL); // Hog复位
 
-	GMStart(15000); // 开始
-	// GMHog( 15000, pHog);
+	// 假设第
 
+	GMStart(10000); // 开始
+	// GMHog( 15000, pHog);
 
 	pSdn->Release();
 	pHog->Release();
-	system("pause");
+	// system("pause");
 	::CoUninitialize();
 	return 0;
 }

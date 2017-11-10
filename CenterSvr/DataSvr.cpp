@@ -37,6 +37,7 @@ LONG DataSvr::CreateSub( LONG nTableID )
 	// …Ë÷√œ‘ æ
 	STARTUPINFO si = {0}; 
 	si.cb = sizeof si;
+	// si.wShowWindow = ;
 	PROCESS_INFORMATION pi = {0};  
    
     ::CreateProcess(	PRO_PATH,
