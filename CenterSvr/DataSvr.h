@@ -21,6 +21,9 @@ public:
 	// 创建子进程
 	LONG CreateSub( LONG nTableID );
 
+	// 前进一步
+	void StepThrough( LONG nTableID );
+
 protected:
 	// 初始化控件句柄
 	LONG InitCtrHandle( LONG nTableID );

@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 10 11:24:16 2017
+/* at Fri Nov 10 14:44:03 2017
  */
 /* Compiler settings for CenterSvr.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -50,7 +50,7 @@
 #include "CenterSvr_i.h"
 
 #define TYPE_FORMAT_STRING_SIZE   3                                 
-#define PROC_FORMAT_STRING_SIZE   91                                
+#define PROC_FORMAT_STRING_SIZE   127                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   0            
@@ -191,6 +191,37 @@ static const CenterSvr_MIDL_PROC_FORMAT_STRING CenterSvr__MIDL_ProcFormatString 
 /* 88 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
+	/* Procedure StepThrough */
+
+/* 90 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 92 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 96 */	NdrFcShort( 0x9 ),	/* 9 */
+/* 98 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 100 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 102 */	NdrFcShort( 0x8 ),	/* 8 */
+/* 104 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+			0x2,		/* 2 */
+/* 106 */	0x8,		/* 8 */
+			0x1,		/* Ext Flags:  new corr desc, */
+/* 108 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 110 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 112 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter nTableID */
+
+/* 114 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 116 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 118 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Return value */
+
+/* 120 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 122 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 124 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
 			0x0
         }
     };
@@ -225,7 +256,8 @@ static const unsigned short IQPServer_FormatStringOffsetTable[] =
     (unsigned short) -1,
     (unsigned short) -1,
     0,
-    48
+    48,
+    90
     };
 
 static const MIDL_STUBLESS_PROXY_INFO IQPServer_ProxyInfo =
@@ -249,7 +281,7 @@ static const MIDL_SERVER_INFO IQPServer_ServerInfo =
     0,
     0,
     0};
-CINTERFACE_PROXY_VTABLE(9) _IQPServerProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(10) _IQPServerProxyVtbl = 
 {
     &IQPServer_ProxyInfo,
     &IID_IQPServer,
@@ -261,7 +293,8 @@ CINTERFACE_PROXY_VTABLE(9) _IQPServerProxyVtbl =
     0 /* IDispatch::GetIDsOfNames */ ,
     0 /* IDispatch_Invoke_Proxy */ ,
     (void *) (INT_PTR) -1 /* IQPServer::Hog */ ,
-    (void *) (INT_PTR) -1 /* IQPServer::CreateSub */
+    (void *) (INT_PTR) -1 /* IQPServer::CreateSub */ ,
+    (void *) (INT_PTR) -1 /* IQPServer::StepThrough */
 };
 
 
@@ -272,6 +305,7 @@ static const PRPC_STUB_FUNCTION IQPServer_table[] =
     STUB_FORWARDING_FUNCTION,
     STUB_FORWARDING_FUNCTION,
     NdrStubCall2,
+    NdrStubCall2,
     NdrStubCall2
 };
 
@@ -279,7 +313,7 @@ CInterfaceStubVtbl _IQPServerStubVtbl =
 {
     &IID_IQPServer,
     &IQPServer_ServerInfo,
-    9,
+    10,
     &IQPServer_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };

@@ -18,6 +18,7 @@ import "GameData.idl";
 interface IQPServer : IDispatch{
 	[id(1)] HRESULT Hog([in] LONG nTableID, [in] LONG nChairID, [in] ENUM_HOG_STAT _hog);
 	[id(2)] HRESULT CreateSub([in] LONG subType, [in] LONG tid );
+	[id(3)] HRESULT StepThrough([in] LONG nTableID);
 };
 [
 	uuid(CC506581-6450-4B04-87C9-D519EA7AFDA9),

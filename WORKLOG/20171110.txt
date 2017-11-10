@@ -14,9 +14,14 @@ tar :
 	
 	testweb创建SubSvr------------未完成
 	1.testweb查询free table--完成
-	2.testweb创建SubSvr------未完成
+	2.testweb创建SubSvr------完成
+	3.<system.web> 节点中添加  <identity impersonate="true" userName="Administrator" password="key1234"/>
+	 查找32位DCOM 信息命令 comexp.msc -32
+	以上 13:50搞定
+	
 	SubSvr查询当前Hog信息--------未完成
 	testweb设置Hog信息-----------未完成
+	开始功能---------------------完成
+	以上------15:00搞定 完成时间 15:22
 	
-	以上 10:20-------------
 	

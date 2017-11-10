@@ -27,6 +27,9 @@ LONG DataSvr::InitCtrHandle( LONG nTableID )
 // 创建子进程
 LONG DataSvr::CreateSub( LONG nTableID )
 {
+	// 构造需要被传出的句柄
+	InitCtrHandle( nTableID );
+
 	// 构造命令行
 	wchar_t wcsCommandLine[64] = {0};
 	swprintf_s( wcsCommandLine, sizeof wcsCommandLine / sizeof(wchar_t), 
@@ -44,6 +47,17 @@ LONG DataSvr::CreateSub( LONG nTableID )
 						&si, 
 						&pi) ; 
 	return 0;
+}
+
+// 前进一步
+void DataSvr::StepThrough( LONG nTableID )
+{
+	::WaitForSingleObject( m_gMsg[nTableID].mi_hRCtr, INFINITE );
+	::ResetEvent(m_gMsg[nTableID].mi_hRCtr);
+
+	::SetEvent(m_gMsg[nTableID].mi_hProcCtr);
+
+	::WaitForSingleObject( m_gMsg[nTableID].mi_hRCtr, INFINITE );
 }
 
 DataSvr gloDataSvr;

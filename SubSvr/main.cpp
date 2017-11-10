@@ -44,10 +44,13 @@ int main(int argc, char *argv[])
 	pHog->BindHogData(&tableInfo, chairInfo, CHAIRSUM); // 绑定
 	pHog->InitHogData(HOG_NULL); // Hog复位
 
-	// GMStart( 15000); // 开始
+	GMStart(15000); // 开始
 	// GMHog( 15000, pHog);
 
+
+	pSdn->Release();
 	pHog->Release();
+	system("pause");
 	::CoUninitialize();
 	return 0;
 }
@@ -60,6 +63,7 @@ int GMStart( LONG ms)
 	::WaitForSingleObject(hProcCtr, ms);
 	::ResetEvent(hProcCtr);
 	// 此处初始化数据空间
+	std::cout << "开始" << std::endl;
 
 	::SetEvent(hRCtr);
 

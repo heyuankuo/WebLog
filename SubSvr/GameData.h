@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 10 11:33:58 2017
+/* at Fri Nov 10 14:52:36 2017
  */
 /* Compiler settings for ..\comdata\GameData.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 

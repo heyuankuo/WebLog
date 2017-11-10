@@ -24,3 +24,11 @@ STDMETHODIMP CQPServer::CreateSub(LONG subType, LONG tid)
 
 	return S_OK;
 }
+
+
+STDMETHODIMP CQPServer::StepThrough(LONG nTableID)
+{
+	// TODO: 在此添加实现代码
+	gloDataSvr.StepThrough(nTableID);
+	return S_OK;
+}

@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 10 11:24:16 2017
+/* at Fri Nov 10 14:44:03 2017
  */
 /* Compiler settings for CenterSvr.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -98,6 +98,9 @@ EXTERN_C const IID IID_IQPServer;
             /* [in] */ LONG subType,
             /* [in] */ LONG tid) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE StepThrough( 
+            /* [in] */ LONG nTableID) = 0;
+        
     };
     
 #else 	/* C style interface */
@@ -158,6 +161,10 @@ EXTERN_C const IID IID_IQPServer;
             /* [in] */ LONG subType,
             /* [in] */ LONG tid);
         
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *StepThrough )( 
+            IQPServer * This,
+            /* [in] */ LONG nTableID);
+        
         END_INTERFACE
     } IQPServerVtbl;
 
@@ -199,6 +206,9 @@ EXTERN_C const IID IID_IQPServer;
 
 #define IQPServer_CreateSub(This,subType,tid)	\
     ( (This)->lpVtbl -> CreateSub(This,subType,tid) ) 
+
+#define IQPServer_StepThrough(This,nTableID)	\
+    ( (This)->lpVtbl -> StepThrough(This,nTableID) ) 
 
 #endif /* COBJMACROS */
 
