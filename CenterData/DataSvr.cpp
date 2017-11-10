@@ -21,6 +21,7 @@ LONG DataSvr::FindFrTable()
 		{
 			m_gMsg[i].busy = TRUE;
 			tableID = i;
+			break;
 		}
 	}
 

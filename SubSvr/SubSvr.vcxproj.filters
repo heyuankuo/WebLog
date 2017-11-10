@@ -24,7 +24,7 @@
     <ClCompile Include="BaseHog_i.c">
       <Filter>Hog</Filter>
     </ClCompile>
-    <ClCompile Include="CenterSvr_i.c">
+    <ClCompile Include="CenterData_i.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,8 +32,16 @@
     <ClInclude Include="BaseHog_i.h">
       <Filter>Hog</Filter>
     </ClInclude>
-    <ClInclude Include="CenterSvr_i.h">
+    <ClInclude Include="GameData.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CenterData_i.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="..\comdata\GameData.idl">
+      <Filter>源文件</Filter>
+    </Midl>
   </ItemGroup>
 </Project>

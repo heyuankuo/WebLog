@@ -6,46 +6,7 @@
 
 import "oaidl.idl";
 import "ocidl.idl";
-
-// hs_enable 有效无效
-typedef enum chair_enable
-{
-      CHAIR_DISABLE = 0,  // 无效
-	  CHAIR_ENABLE        // 有效
-}ENUM_CHAIR_ENABLE;
-
-// hs_hot_state 表决
-typedef enum hog_stat
-{
-      HOG_NULL = 0, // 无效
-	  HOG_DOWN,     // 不抢
-	  HOG_UP		// 抢
-}ENUM_HOG_STAT;
-
-// 角色
-typedef enum player_role
-{
-      ROLE_ZHUANG = 0,
-	  ROLE_XIAN
-}ENUM_PLAYER_ROLE;
-
-
-typedef struct _tagChairInfo 
-{
-	ENUM_CHAIR_ENABLE	hs_chair_enable;
-	ENUM_HOG_STAT		hs_hot_state;	// 状态 未定， 叫，不叫
-	ENUM_PLAYER_ROLE	hs_role;		// 角色 未定，闲， 庄
-	LONGLONG			hs_chip;		// 筹
-	DWORD				hs_enableHog;	// 能否Hog  FALSE--不能， TRUE---能
-}ChairInfo, *PChairInfo;
-
-// 座子信息
-typedef struct _tagTableInfo 
-{
-	DWORD	ti_curCount; // 当前局数
-	DWORD	ti_allCount; // 总局数
-	LONGLONG ti_lowScore; // 底分
-}TableInfo , *PTableInfo;
+import "GameData.idl";
 
 [
 	object,

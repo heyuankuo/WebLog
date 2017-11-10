@@ -6,7 +6,7 @@
 
 import "oaidl.idl";
 import "ocidl.idl";
-import "GameData.idl"
+import "GameData.idl";
 
 [
 	object,

@@ -4,9 +4,9 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 10 11:24:16 2017
+/* at Fri Nov 10 11:22:56 2017
  */
-/* Compiler settings for CenterSvr.idl:
+/* Compiler settings for BaseHog.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -47,47 +47,47 @@
 #endif /* __RPCPROXY_H_VERSION__ */
 
 
-#include "CenterSvr_i.h"
+#include "BaseHog_i.h"
 
-#define TYPE_FORMAT_STRING_SIZE   3                                 
-#define PROC_FORMAT_STRING_SIZE   91                                
+#define TYPE_FORMAT_STRING_SIZE   47                                
+#define PROC_FORMAT_STRING_SIZE   127                               
 #define EXPR_FORMAT_STRING_SIZE   1                                 
 #define TRANSMIT_AS_TABLE_SIZE    0            
 #define WIRE_MARSHAL_TABLE_SIZE   0            
 
-typedef struct _CenterSvr_MIDL_TYPE_FORMAT_STRING
+typedef struct _BaseHog_MIDL_TYPE_FORMAT_STRING
     {
     short          Pad;
     unsigned char  Format[ TYPE_FORMAT_STRING_SIZE ];
-    } CenterSvr_MIDL_TYPE_FORMAT_STRING;
+    } BaseHog_MIDL_TYPE_FORMAT_STRING;
 
-typedef struct _CenterSvr_MIDL_PROC_FORMAT_STRING
+typedef struct _BaseHog_MIDL_PROC_FORMAT_STRING
     {
     short          Pad;
     unsigned char  Format[ PROC_FORMAT_STRING_SIZE ];
-    } CenterSvr_MIDL_PROC_FORMAT_STRING;
+    } BaseHog_MIDL_PROC_FORMAT_STRING;
 
-typedef struct _CenterSvr_MIDL_EXPR_FORMAT_STRING
+typedef struct _BaseHog_MIDL_EXPR_FORMAT_STRING
     {
     long          Pad;
     unsigned char  Format[ EXPR_FORMAT_STRING_SIZE ];
-    } CenterSvr_MIDL_EXPR_FORMAT_STRING;
+    } BaseHog_MIDL_EXPR_FORMAT_STRING;
 
 
 static const RPC_SYNTAX_IDENTIFIER  _RpcTransferSyntax = 
 {{0x8A885D04,0x1CEB,0x11C9,{0x9F,0xE8,0x08,0x00,0x2B,0x10,0x48,0x60}},{2,0}};
 
 
-extern const CenterSvr_MIDL_TYPE_FORMAT_STRING CenterSvr__MIDL_TypeFormatString;
-extern const CenterSvr_MIDL_PROC_FORMAT_STRING CenterSvr__MIDL_ProcFormatString;
-extern const CenterSvr_MIDL_EXPR_FORMAT_STRING CenterSvr__MIDL_ExprFormatString;
+extern const BaseHog_MIDL_TYPE_FORMAT_STRING BaseHog__MIDL_TypeFormatString;
+extern const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString;
+extern const BaseHog_MIDL_EXPR_FORMAT_STRING BaseHog__MIDL_ExprFormatString;
 
 
 extern const MIDL_STUB_DESC Object_StubDesc;
 
 
-extern const MIDL_SERVER_INFO IQPServer_ServerInfo;
-extern const MIDL_STUBLESS_PROXY_INFO IQPServer_ProxyInfo;
+extern const MIDL_SERVER_INFO IHog_ServerInfo;
+extern const MIDL_STUBLESS_PROXY_INFO IHog_ProxyInfo;
 
 
 
@@ -103,21 +103,21 @@ extern const MIDL_STUBLESS_PROXY_INFO IQPServer_ProxyInfo;
 #endif
 
 
-static const CenterSvr_MIDL_PROC_FORMAT_STRING CenterSvr__MIDL_ProcFormatString =
+static const BaseHog_MIDL_PROC_FORMAT_STRING BaseHog__MIDL_ProcFormatString =
     {
         0,
         {
 
-	/* Procedure Hog */
+	/* Procedure BindHogData */
 
 			0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
 /*  2 */	NdrFcLong( 0x0 ),	/* 0 */
 /*  6 */	NdrFcShort( 0x7 ),	/* 7 */
 /*  8 */	NdrFcShort( 0x14 ),	/* x86 Stack size/offset = 20 */
-/* 10 */	NdrFcShort( 0x16 ),	/* 22 */
+/* 10 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 12 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 14 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+/* 14 */	0x46,		/* Oi2 Flags:  clt must size, has return, has ext, */
 			0x4,		/* 4 */
 /* 16 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
@@ -125,25 +125,23 @@ static const CenterSvr_MIDL_PROC_FORMAT_STRING CenterSvr__MIDL_ProcFormatString 
 /* 20 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 22 */	NdrFcShort( 0x0 ),	/* 0 */
 
-	/* Parameter nTableID */
+	/* Parameter _table */
 
-/* 24 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 24 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 26 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 28 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
+/* 28 */	NdrFcShort( 0x6 ),	/* Type Offset=6 */
 
-	/* Parameter nChairID */
+	/* Parameter _chairs */
 
-/* 30 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
+/* 30 */	NdrFcShort( 0x10b ),	/* Flags:  must size, must free, in, simple ref, */
 /* 32 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 34 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
+/* 34 */	NdrFcShort( 0x1a ),	/* Type Offset=26 */
 
-	/* Parameter _hog */
+	/* Parameter chairSum */
 
 /* 36 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
 /* 38 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 40 */	0xd,		/* FC_ENUM16 */
+/* 40 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 	/* Return value */
@@ -153,53 +151,122 @@ static const CenterSvr_MIDL_PROC_FORMAT_STRING CenterSvr__MIDL_ProcFormatString 
 /* 46 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
-	/* Procedure CreateSub */
+	/* Procedure InitHogData */
 
 /* 48 */	0x33,		/* FC_AUTO_HANDLE */
 			0x6c,		/* Old Flags:  object, Oi2 */
 /* 50 */	NdrFcLong( 0x0 ),	/* 0 */
 /* 54 */	NdrFcShort( 0x8 ),	/* 8 */
-/* 56 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
-/* 58 */	NdrFcShort( 0x10 ),	/* 16 */
+/* 56 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 58 */	NdrFcShort( 0x6 ),	/* 6 */
 /* 60 */	NdrFcShort( 0x8 ),	/* 8 */
 /* 62 */	0x44,		/* Oi2 Flags:  has return, has ext, */
-			0x3,		/* 3 */
+			0x2,		/* 2 */
 /* 64 */	0x8,		/* 8 */
 			0x1,		/* Ext Flags:  new corr desc, */
 /* 66 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 68 */	NdrFcShort( 0x0 ),	/* 0 */
 /* 70 */	NdrFcShort( 0x0 ),	/* 0 */
 
-	/* Parameter subType */
+	/* Parameter iniStat */
 
 /* 72 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
 /* 74 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
-/* 76 */	0x8,		/* FC_LONG */
-			0x0,		/* 0 */
-
-	/* Parameter tid */
-
-/* 78 */	NdrFcShort( 0x48 ),	/* Flags:  in, base type, */
-/* 80 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
-/* 82 */	0x8,		/* FC_LONG */
+/* 76 */	0xd,		/* FC_ENUM16 */
 			0x0,		/* 0 */
 
 	/* Return value */
 
-/* 84 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
-/* 86 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
-/* 88 */	0x8,		/* FC_LONG */
+/* 78 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 80 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 82 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Procedure GenerateHog */
+
+/* 84 */	0x33,		/* FC_AUTO_HANDLE */
+			0x6c,		/* Old Flags:  object, Oi2 */
+/* 86 */	NdrFcLong( 0x0 ),	/* 0 */
+/* 90 */	NdrFcShort( 0x9 ),	/* 9 */
+/* 92 */	NdrFcShort( 0x10 ),	/* x86 Stack size/offset = 16 */
+/* 94 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 96 */	NdrFcShort( 0x40 ),	/* 64 */
+/* 98 */	0x44,		/* Oi2 Flags:  has return, has ext, */
+			0x3,		/* 3 */
+/* 100 */	0x8,		/* 8 */
+			0x1,		/* Ext Flags:  new corr desc, */
+/* 102 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 104 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 106 */	NdrFcShort( 0x0 ),	/* 0 */
+
+	/* Parameter next */
+
+/* 108 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 110 */	NdrFcShort( 0x4 ),	/* x86 Stack size/offset = 4 */
+/* 112 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Parameter _hogID */
+
+/* 114 */	NdrFcShort( 0x2150 ),	/* Flags:  out, base type, simple ref, srv alloc size=8 */
+/* 116 */	NdrFcShort( 0x8 ),	/* x86 Stack size/offset = 8 */
+/* 118 */	0x8,		/* FC_LONG */
+			0x0,		/* 0 */
+
+	/* Return value */
+
+/* 120 */	NdrFcShort( 0x70 ),	/* Flags:  out, return, base type, */
+/* 122 */	NdrFcShort( 0xc ),	/* x86 Stack size/offset = 12 */
+/* 124 */	0x8,		/* FC_LONG */
 			0x0,		/* 0 */
 
 			0x0
         }
     };
 
-static const CenterSvr_MIDL_TYPE_FORMAT_STRING CenterSvr__MIDL_TypeFormatString =
+static const BaseHog_MIDL_TYPE_FORMAT_STRING BaseHog__MIDL_TypeFormatString =
     {
         0,
         {
 			NdrFcShort( 0x0 ),	/* 0 */
+/*  2 */	
+			0x11, 0x0,	/* FC_RP */
+/*  4 */	NdrFcShort( 0x2 ),	/* Offset= 2 (6) */
+/*  6 */	
+			0x1a,		/* FC_BOGUS_STRUCT */
+			0x7,		/* 7 */
+/*  8 */	NdrFcShort( 0x20 ),	/* 32 */
+/* 10 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 12 */	NdrFcShort( 0x0 ),	/* Offset= 0 (12) */
+/* 14 */	0x8,		/* FC_LONG */
+			0x8,		/* FC_LONG */
+/* 16 */	0x8,		/* FC_LONG */
+			0x40,		/* FC_STRUCTPAD4 */
+/* 18 */	0xb,		/* FC_HYPER */
+			0x8,		/* FC_LONG */
+/* 20 */	0x40,		/* FC_STRUCTPAD4 */
+			0x5b,		/* FC_END */
+/* 22 */	
+			0x11, 0x0,	/* FC_RP */
+/* 24 */	NdrFcShort( 0x2 ),	/* Offset= 2 (26) */
+/* 26 */	
+			0x1a,		/* FC_BOGUS_STRUCT */
+			0x7,		/* 7 */
+/* 28 */	NdrFcShort( 0x20 ),	/* 32 */
+/* 30 */	NdrFcShort( 0x0 ),	/* 0 */
+/* 32 */	NdrFcShort( 0x0 ),	/* Offset= 0 (32) */
+/* 34 */	0xd,		/* FC_ENUM16 */
+			0xd,		/* FC_ENUM16 */
+/* 36 */	0xd,		/* FC_ENUM16 */
+			0x40,		/* FC_STRUCTPAD4 */
+/* 38 */	0xb,		/* FC_HYPER */
+			0x8,		/* FC_LONG */
+/* 40 */	0x40,		/* FC_STRUCTPAD4 */
+			0x5b,		/* FC_END */
+/* 42 */	
+			0x11, 0xc,	/* FC_RP [alloced_on_stack] [simple_pointer] */
+/* 44 */	0x8,		/* FC_LONG */
+			0x5c,		/* FC_PAD */
 
 			0x0
         }
@@ -214,45 +281,46 @@ static const CenterSvr_MIDL_TYPE_FORMAT_STRING CenterSvr__MIDL_TypeFormatString 
    GUID={0x00020400,0x0000,0x0000,{0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x46}} */
 
 
-/* Object interface: IQPServer, ver. 0.0,
-   GUID={0xFDCF44B6,0x3174,0x4D8A,{0xB2,0xEF,0xD9,0xA1,0x59,0x47,0x4D,0x49}} */
+/* Object interface: IHog, ver. 0.0,
+   GUID={0xFA6B316E,0xBAC1,0x4360,{0xA8,0x94,0x77,0x83,0xB7,0xDF,0x34,0x0F}} */
 
 #pragma code_seg(".orpc")
-static const unsigned short IQPServer_FormatStringOffsetTable[] =
+static const unsigned short IHog_FormatStringOffsetTable[] =
     {
     (unsigned short) -1,
     (unsigned short) -1,
     (unsigned short) -1,
     (unsigned short) -1,
     0,
-    48
+    48,
+    84
     };
 
-static const MIDL_STUBLESS_PROXY_INFO IQPServer_ProxyInfo =
+static const MIDL_STUBLESS_PROXY_INFO IHog_ProxyInfo =
     {
     &Object_StubDesc,
-    CenterSvr__MIDL_ProcFormatString.Format,
-    &IQPServer_FormatStringOffsetTable[-3],
+    BaseHog__MIDL_ProcFormatString.Format,
+    &IHog_FormatStringOffsetTable[-3],
     0,
     0,
     0
     };
 
 
-static const MIDL_SERVER_INFO IQPServer_ServerInfo = 
+static const MIDL_SERVER_INFO IHog_ServerInfo = 
     {
     &Object_StubDesc,
     0,
-    CenterSvr__MIDL_ProcFormatString.Format,
-    &IQPServer_FormatStringOffsetTable[-3],
+    BaseHog__MIDL_ProcFormatString.Format,
+    &IHog_FormatStringOffsetTable[-3],
     0,
     0,
     0,
     0};
-CINTERFACE_PROXY_VTABLE(9) _IQPServerProxyVtbl = 
+CINTERFACE_PROXY_VTABLE(10) _IHogProxyVtbl = 
 {
-    &IQPServer_ProxyInfo,
-    &IID_IQPServer,
+    &IHog_ProxyInfo,
+    &IID_IHog,
     IUnknown_QueryInterface_Proxy,
     IUnknown_AddRef_Proxy,
     IUnknown_Release_Proxy ,
@@ -260,27 +328,29 @@ CINTERFACE_PROXY_VTABLE(9) _IQPServerProxyVtbl =
     0 /* IDispatch::GetTypeInfo */ ,
     0 /* IDispatch::GetIDsOfNames */ ,
     0 /* IDispatch_Invoke_Proxy */ ,
-    (void *) (INT_PTR) -1 /* IQPServer::Hog */ ,
-    (void *) (INT_PTR) -1 /* IQPServer::CreateSub */
+    (void *) (INT_PTR) -1 /* IHog::BindHogData */ ,
+    (void *) (INT_PTR) -1 /* IHog::InitHogData */ ,
+    (void *) (INT_PTR) -1 /* IHog::GenerateHog */
 };
 
 
-static const PRPC_STUB_FUNCTION IQPServer_table[] =
+static const PRPC_STUB_FUNCTION IHog_table[] =
 {
     STUB_FORWARDING_FUNCTION,
     STUB_FORWARDING_FUNCTION,
     STUB_FORWARDING_FUNCTION,
     STUB_FORWARDING_FUNCTION,
     NdrStubCall2,
+    NdrStubCall2,
     NdrStubCall2
 };
 
-CInterfaceStubVtbl _IQPServerStubVtbl =
+CInterfaceStubVtbl _IHogStubVtbl =
 {
-    &IID_IQPServer,
-    &IQPServer_ServerInfo,
-    9,
-    &IQPServer_table[-3],
+    &IID_IHog,
+    &IHog_ServerInfo,
+    10,
+    &IHog_table[-3],
     CStdStubBuffer_DELEGATING_METHODS
 };
 
@@ -294,7 +364,7 @@ static const MIDL_STUB_DESC Object_StubDesc =
     0,
     0,
     0,
-    CenterSvr__MIDL_TypeFormatString.Format,
+    BaseHog__MIDL_TypeFormatString.Format,
     1, /* -error bounds_check flag */
     0x50002, /* Ndr library version */
     0,
@@ -308,37 +378,37 @@ static const MIDL_STUB_DESC Object_StubDesc =
     0
     };
 
-const CInterfaceProxyVtbl * const _CenterSvr_ProxyVtblList[] = 
+const CInterfaceProxyVtbl * const _BaseHog_ProxyVtblList[] = 
 {
-    ( CInterfaceProxyVtbl *) &_IQPServerProxyVtbl,
+    ( CInterfaceProxyVtbl *) &_IHogProxyVtbl,
     0
 };
 
-const CInterfaceStubVtbl * const _CenterSvr_StubVtblList[] = 
+const CInterfaceStubVtbl * const _BaseHog_StubVtblList[] = 
 {
-    ( CInterfaceStubVtbl *) &_IQPServerStubVtbl,
+    ( CInterfaceStubVtbl *) &_IHogStubVtbl,
     0
 };
 
-PCInterfaceName const _CenterSvr_InterfaceNamesList[] = 
+PCInterfaceName const _BaseHog_InterfaceNamesList[] = 
 {
-    "IQPServer",
+    "IHog",
     0
 };
 
-const IID *  const _CenterSvr_BaseIIDList[] = 
+const IID *  const _BaseHog_BaseIIDList[] = 
 {
     &IID_IDispatch,
     0
 };
 
 
-#define _CenterSvr_CHECK_IID(n)	IID_GENERIC_CHECK_IID( _CenterSvr, pIID, n)
+#define _BaseHog_CHECK_IID(n)	IID_GENERIC_CHECK_IID( _BaseHog, pIID, n)
 
-int __stdcall _CenterSvr_IID_Lookup( const IID * pIID, int * pIndex )
+int __stdcall _BaseHog_IID_Lookup( const IID * pIID, int * pIndex )
 {
     
-    if(!_CenterSvr_CHECK_IID(0))
+    if(!_BaseHog_CHECK_IID(0))
         {
         *pIndex = 0;
         return 1;
@@ -347,13 +417,13 @@ int __stdcall _CenterSvr_IID_Lookup( const IID * pIID, int * pIndex )
     return 0;
 }
 
-const ExtendedProxyFileInfo CenterSvr_ProxyFileInfo = 
+const ExtendedProxyFileInfo BaseHog_ProxyFileInfo = 
 {
-    (PCInterfaceProxyVtblList *) & _CenterSvr_ProxyVtblList,
-    (PCInterfaceStubVtblList *) & _CenterSvr_StubVtblList,
-    (const PCInterfaceName * ) & _CenterSvr_InterfaceNamesList,
-    (const IID ** ) & _CenterSvr_BaseIIDList,
-    & _CenterSvr_IID_Lookup, 
+    (PCInterfaceProxyVtblList *) & _BaseHog_ProxyVtblList,
+    (PCInterfaceStubVtblList *) & _BaseHog_StubVtblList,
+    (const PCInterfaceName * ) & _BaseHog_InterfaceNamesList,
+    (const IID ** ) & _BaseHog_BaseIIDList,
+    & _BaseHog_IID_Lookup, 
     1,
     2,
     0, /* table of [async_uuid] interfaces */

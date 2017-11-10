@@ -36,6 +36,7 @@ typedef struct _tagChairInfo
 // 座子信息
 typedef struct _tagTableInfo 
 {
+	DWORD		ti_tID; // 房间号
 	DWORD		ti_curCount; // 当前局数
 	DWORD		ti_allCount; // 总局数
 	LONGLONG	ti_lowScore; // 底分

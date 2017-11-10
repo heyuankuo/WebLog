@@ -60,6 +60,9 @@
     <ClInclude Include="DataSvr.h">
       <Filter>mode</Filter>
     </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CenterData.rc">
@@ -77,6 +80,9 @@
   </ItemGroup>
   <ItemGroup>
     <Midl Include="CenterData.idl">
+      <Filter>源文件</Filter>
+    </Midl>
+    <Midl Include="..\comdata\GameData.idl">
       <Filter>源文件</Filter>
     </Midl>
   </ItemGroup>

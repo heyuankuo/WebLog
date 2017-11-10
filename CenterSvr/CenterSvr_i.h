@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Thu Nov 09 14:08:49 2017
+/* at Fri Nov 10 11:24:16 2017
  */
 /* Compiler settings for CenterSvr.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -66,59 +66,13 @@ typedef struct QPServer QPServer;
 /* header files for imported files */
 #include "oaidl.h"
 #include "ocidl.h"
+#include "GameData.h"
 #include "shobjidl.h"
 
 #ifdef __cplusplus
 extern "C"{
 #endif 
 
-
-/* interface __MIDL_itf_CenterSvr_0000_0000 */
-/* [local] */ 
-
-typedef 
-enum chair_enable
-    {	CHAIR_DISABLE	= 0,
-	CHAIR_ENABLE	= ( CHAIR_DISABLE + 1 ) 
-    } 	ENUM_CHAIR_ENABLE;
-
-typedef 
-enum hog_stat
-    {	HOG_NULL	= 0,
-	HOG_DOWN	= ( HOG_NULL + 1 ) ,
-	HOG_UP	= ( HOG_DOWN + 1 ) 
-    } 	ENUM_HOG_STAT;
-
-typedef 
-enum player_role
-    {	ROLE_ZHUANG	= 0,
-	ROLE_XIAN	= ( ROLE_ZHUANG + 1 ) 
-    } 	ENUM_PLAYER_ROLE;
-
-typedef struct _tagChairInfo
-    {
-    ENUM_CHAIR_ENABLE hs_chair_enable;
-    ENUM_HOG_STAT hs_hot_state;
-    ENUM_PLAYER_ROLE hs_role;
-    LONGLONG hs_chip;
-    DWORD hs_enableHog;
-    } 	ChairInfo;
-
-typedef struct _tagChairInfo *PChairInfo;
-
-typedef struct _tagTableInfo
-    {
-    DWORD ti_curCount;
-    DWORD ti_allCount;
-    LONGLONG ti_lowScore;
-    } 	TableInfo;
-
-typedef struct _tagTableInfo *PTableInfo;
-
-
-
-extern RPC_IF_HANDLE __MIDL_itf_CenterSvr_0000_0000_v0_0_c_ifspec;
-extern RPC_IF_HANDLE __MIDL_itf_CenterSvr_0000_0000_v0_0_s_ifspec;
 
 #ifndef __IQPServer_INTERFACE_DEFINED__
 #define __IQPServer_INTERFACE_DEFINED__

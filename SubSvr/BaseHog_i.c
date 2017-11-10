@@ -6,7 +6,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Thu Nov 09 09:41:41 2017
+/* at Fri Nov 10 08:58:58 2017
  */
 /* Compiler settings for BaseHog.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 

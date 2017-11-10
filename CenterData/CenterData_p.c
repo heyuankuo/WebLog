@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Thu Nov 09 14:28:27 2017
+/* at Fri Nov 10 11:23:06 2017
  */
 /* Compiler settings for CenterData.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
@@ -201,10 +201,6 @@ static const CenterData_MIDL_TYPE_FORMAT_STRING CenterData__MIDL_TypeFormatStrin
 			0x0
         }
     };
-
-
-/* Standard interface: __MIDL_itf_CenterData_0000_0000, ver. 0.0,
-   GUID={0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}} */
 
 
 /* Object interface: IUnknown, ver. 0.0,

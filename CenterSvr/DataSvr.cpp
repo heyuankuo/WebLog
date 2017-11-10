@@ -30,7 +30,7 @@ LONG DataSvr::CreateSub( LONG nTableID )
 	// 构造命令行
 	wchar_t wcsCommandLine[64] = {0};
 	swprintf_s( wcsCommandLine, sizeof wcsCommandLine / sizeof(wchar_t), 
-		L"mi_hProcCtr:%ld,mi_hRCtr:%ld", m_gMsg[nTableID].mi_hProcCtr, m_gMsg[nTableID].mi_hRCtr );
+		L"mi_hProcCtr:%ld,mi_hRCtr:%ld,mi_tID:%ld", m_gMsg[nTableID].mi_hProcCtr, m_gMsg[nTableID].mi_hRCtr, nTableID );
 	// 设置显示
 	STARTUPINFO si = {0}; 
 	si.cb = sizeof si;

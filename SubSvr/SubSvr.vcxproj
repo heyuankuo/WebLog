@@ -39,6 +39,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>E:\project\QP\WEBQP\WebLog\comdata;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -75,12 +76,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseHog_i.c" />
-    <ClCompile Include="CenterSvr_i.c" />
+    <ClCompile Include="CenterData_i.c" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseHog_i.h" />
-    <ClInclude Include="CenterSvr_i.h" />
+    <ClInclude Include="CenterData_i.h" />
+    <ClInclude Include="GameData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="..\comdata\GameData.idl">
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).h</HeaderFileName>
+    </Midl>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

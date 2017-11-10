@@ -57,6 +57,9 @@
     <ClInclude Include="Hog.h">
       <Filter>Class</Filter>
     </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BaseHog.rc">
@@ -79,7 +82,7 @@
     <Midl Include="BaseHog.idl">
       <Filter>源文件</Filter>
     </Midl>
-    <Midl Include="GameData.idl">
+    <Midl Include="..\comdata\GameData.idl">
       <Filter>源文件</Filter>
     </Midl>
   </ItemGroup>

@@ -4,9 +4,9 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 10 11:23:06 2017
+/* at Fri Nov 10 11:22:56 2017
  */
-/* Compiler settings for CenterData.idl:
+/* Compiler settings for BaseHog.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
@@ -36,8 +36,8 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __CenterData_i_h__
-#define __CenterData_i_h__
+#ifndef __BaseHog_i_h__
+#define __BaseHog_i_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
@@ -45,22 +45,22 @@
 
 /* Forward Declarations */ 
 
-#ifndef __IZySdn_FWD_DEFINED__
-#define __IZySdn_FWD_DEFINED__
-typedef interface IZySdn IZySdn;
-#endif 	/* __IZySdn_FWD_DEFINED__ */
+#ifndef __IHog_FWD_DEFINED__
+#define __IHog_FWD_DEFINED__
+typedef interface IHog IHog;
+#endif 	/* __IHog_FWD_DEFINED__ */
 
 
-#ifndef __ZySdn_FWD_DEFINED__
-#define __ZySdn_FWD_DEFINED__
+#ifndef __Hog_FWD_DEFINED__
+#define __Hog_FWD_DEFINED__
 
 #ifdef __cplusplus
-typedef class ZySdn ZySdn;
+typedef class Hog Hog;
 #else
-typedef struct ZySdn ZySdn;
+typedef struct Hog Hog;
 #endif /* __cplusplus */
 
-#endif 	/* __ZySdn_FWD_DEFINED__ */
+#endif 	/* __Hog_FWD_DEFINED__ */
 
 
 /* header files for imported files */
@@ -74,61 +74,65 @@ extern "C"{
 #endif 
 
 
-#ifndef __IZySdn_INTERFACE_DEFINED__
-#define __IZySdn_INTERFACE_DEFINED__
+#ifndef __IHog_INTERFACE_DEFINED__
+#define __IHog_INTERFACE_DEFINED__
 
-/* interface IZySdn */
+/* interface IHog */
 /* [unique][nonextensible][dual][uuid][object] */ 
 
 
-EXTERN_C const IID IID_IZySdn;
+EXTERN_C const IID IID_IHog;
 
 #if defined(__cplusplus) && !defined(CINTERFACE)
     
-    MIDL_INTERFACE("59D8A9ED-F59B-445C-9685-22CD38469884")
-    IZySdn : public IDispatch
+    MIDL_INTERFACE("FA6B316E-BAC1-4360-A894-7783B7DF340F")
+    IHog : public IDispatch
     {
     public:
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE CreateTable( 
-            /* [retval][out] */ LONG *tableID) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE BindHogData( 
+            /* [in] */ PTableInfo _table,
+            /* [in] */ PChairInfo _chairs,
+            /* [in] */ LONG chairSum) = 0;
         
-        virtual /* [id] */ HRESULT STDMETHODCALLTYPE Hog( 
-            /* [in] */ LONG tableID,
-            /* [in] */ LONG chairID,
-            /* [in] */ ENUM_HOG_STAT _hog) = 0;
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE InitHogData( 
+            /* [in] */ ENUM_HOG_STAT iniStat) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GenerateHog( 
+            /* [out] */ BOOL *next,
+            /* [out] */ LONG *_hogID) = 0;
         
     };
     
 #else 	/* C style interface */
 
-    typedef struct IZySdnVtbl
+    typedef struct IHogVtbl
     {
         BEGIN_INTERFACE
         
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 
-            IZySdn * This,
+            IHog * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
             __RPC__deref_out  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
-            IZySdn * This);
+            IHog * This);
         
         ULONG ( STDMETHODCALLTYPE *Release )( 
-            IZySdn * This);
+            IHog * This);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfoCount )( 
-            IZySdn * This,
+            IHog * This,
             /* [out] */ UINT *pctinfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetTypeInfo )( 
-            IZySdn * This,
+            IHog * This,
             /* [in] */ UINT iTInfo,
             /* [in] */ LCID lcid,
             /* [out] */ ITypeInfo **ppTInfo);
         
         HRESULT ( STDMETHODCALLTYPE *GetIDsOfNames )( 
-            IZySdn * This,
+            IHog * This,
             /* [in] */ REFIID riid,
             /* [size_is][in] */ LPOLESTR *rgszNames,
             /* [range][in] */ UINT cNames,
@@ -136,7 +140,7 @@ EXTERN_C const IID IID_IZySdn;
             /* [size_is][out] */ DISPID *rgDispId);
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
-            IZySdn * This,
+            IHog * This,
             /* [in] */ DISPID dispIdMember,
             /* [in] */ REFIID riid,
             /* [in] */ LCID lcid,
@@ -146,22 +150,27 @@ EXTERN_C const IID IID_IZySdn;
             /* [out] */ EXCEPINFO *pExcepInfo,
             /* [out] */ UINT *puArgErr);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )( 
-            IZySdn * This,
-            /* [retval][out] */ LONG *tableID);
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *BindHogData )( 
+            IHog * This,
+            /* [in] */ PTableInfo _table,
+            /* [in] */ PChairInfo _chairs,
+            /* [in] */ LONG chairSum);
         
-        /* [id] */ HRESULT ( STDMETHODCALLTYPE *Hog )( 
-            IZySdn * This,
-            /* [in] */ LONG tableID,
-            /* [in] */ LONG chairID,
-            /* [in] */ ENUM_HOG_STAT _hog);
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *InitHogData )( 
+            IHog * This,
+            /* [in] */ ENUM_HOG_STAT iniStat);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GenerateHog )( 
+            IHog * This,
+            /* [out] */ BOOL *next,
+            /* [out] */ LONG *_hogID);
         
         END_INTERFACE
-    } IZySdnVtbl;
+    } IHogVtbl;
 
-    interface IZySdn
+    interface IHog
     {
-        CONST_VTBL struct IZySdnVtbl *lpVtbl;
+        CONST_VTBL struct IHogVtbl *lpVtbl;
     };
 
     
@@ -169,34 +178,37 @@ EXTERN_C const IID IID_IZySdn;
 #ifdef COBJMACROS
 
 
-#define IZySdn_QueryInterface(This,riid,ppvObject)	\
+#define IHog_QueryInterface(This,riid,ppvObject)	\
     ( (This)->lpVtbl -> QueryInterface(This,riid,ppvObject) ) 
 
-#define IZySdn_AddRef(This)	\
+#define IHog_AddRef(This)	\
     ( (This)->lpVtbl -> AddRef(This) ) 
 
-#define IZySdn_Release(This)	\
+#define IHog_Release(This)	\
     ( (This)->lpVtbl -> Release(This) ) 
 
 
-#define IZySdn_GetTypeInfoCount(This,pctinfo)	\
+#define IHog_GetTypeInfoCount(This,pctinfo)	\
     ( (This)->lpVtbl -> GetTypeInfoCount(This,pctinfo) ) 
 
-#define IZySdn_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
+#define IHog_GetTypeInfo(This,iTInfo,lcid,ppTInfo)	\
     ( (This)->lpVtbl -> GetTypeInfo(This,iTInfo,lcid,ppTInfo) ) 
 
-#define IZySdn_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
+#define IHog_GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId)	\
     ( (This)->lpVtbl -> GetIDsOfNames(This,riid,rgszNames,cNames,lcid,rgDispId) ) 
 
-#define IZySdn_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
+#define IHog_Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr)	\
     ( (This)->lpVtbl -> Invoke(This,dispIdMember,riid,lcid,wFlags,pDispParams,pVarResult,pExcepInfo,puArgErr) ) 
 
 
-#define IZySdn_CreateTable(This,tableID)	\
-    ( (This)->lpVtbl -> CreateTable(This,tableID) ) 
+#define IHog_BindHogData(This,_table,_chairs,chairSum)	\
+    ( (This)->lpVtbl -> BindHogData(This,_table,_chairs,chairSum) ) 
 
-#define IZySdn_Hog(This,tableID,chairID,_hog)	\
-    ( (This)->lpVtbl -> Hog(This,tableID,chairID,_hog) ) 
+#define IHog_InitHogData(This,iniStat)	\
+    ( (This)->lpVtbl -> InitHogData(This,iniStat) ) 
+
+#define IHog_GenerateHog(This,next,_hogID)	\
+    ( (This)->lpVtbl -> GenerateHog(This,next,_hogID) ) 
 
 #endif /* COBJMACROS */
 
@@ -206,27 +218,27 @@ EXTERN_C const IID IID_IZySdn;
 
 
 
-#endif 	/* __IZySdn_INTERFACE_DEFINED__ */
+#endif 	/* __IHog_INTERFACE_DEFINED__ */
 
 
 
-#ifndef __CenterDataLib_LIBRARY_DEFINED__
-#define __CenterDataLib_LIBRARY_DEFINED__
+#ifndef __BaseHogLib_LIBRARY_DEFINED__
+#define __BaseHogLib_LIBRARY_DEFINED__
 
-/* library CenterDataLib */
+/* library BaseHogLib */
 /* [version][uuid] */ 
 
 
-EXTERN_C const IID LIBID_CenterDataLib;
+EXTERN_C const IID LIBID_BaseHogLib;
 
-EXTERN_C const CLSID CLSID_ZySdn;
+EXTERN_C const CLSID CLSID_Hog;
 
 #ifdef __cplusplus
 
-class DECLSPEC_UUID("EA23FE32-4B93-478B-B2A8-7681BFA1EEB2")
-ZySdn;
+class DECLSPEC_UUID("4E14A166-5C2E-412F-A94B-326FF50A7A59")
+Hog;
 #endif
-#endif /* __CenterDataLib_LIBRARY_DEFINED__ */
+#endif /* __BaseHogLib_LIBRARY_DEFINED__ */
 
 /* Additional Prototypes for ALL interfaces */
 
