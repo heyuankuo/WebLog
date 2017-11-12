@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Nov 12 15:13:22 2017
+/* at Sun Nov 12 15:12:49 2017
  */
 /* Compiler settings for ..\comdata\BaseHog.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
@@ -44,7 +44,7 @@
 #endif /* __RPCPROXY_H_VERSION__ */
 
 
-#include "BaseHog_i.h"
+#include "BaseHog_h.h"
 
 #define TYPE_FORMAT_STRING_SIZE   47                                
 #define PROC_FORMAT_STRING_SIZE   133                               

@@ -59,6 +59,9 @@ protected:
 	// 获取实际数量
 	int GetCurPSum();
 
+	// 获取实际玩家数量
+	int GetHogUpSum();
+
 	// 生成范围内的随机整数
 	int GenRand( int Llimit, int Ulimit );
 

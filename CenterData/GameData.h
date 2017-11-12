@@ -3,11 +3,11 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 10 13:55:54 2017
+ /* File created by MIDL compiler version 8.00.0603 */
+/* at Sun Nov 12 15:12:48 2017
  */
 /* Compiler settings for ..\comdata\GameData.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
@@ -55,25 +55,29 @@ extern "C"{
 
 typedef 
 enum chair_enable
-    {	CHAIR_DISABLE	= 0,
-	CHAIR_ENABLE	= ( CHAIR_DISABLE + 1 ) 
+    {
+        CHAIR_DISABLE	= 0,
+        CHAIR_ENABLE	= ( CHAIR_DISABLE + 1 ) 
     } 	ENUM_CHAIR_ENABLE;
 
 typedef 
 enum hog_stat
-    {	HOG_NULL	= 0,
-	HOG_DOWN	= ( HOG_NULL + 1 ) ,
-	HOG_UP	= ( HOG_DOWN + 1 ) 
+    {
+        HOG_NULL	= 0,
+        HOG_DOWN	= ( HOG_NULL + 1 ) ,
+        HOG_UP	= ( HOG_DOWN + 1 ) 
     } 	ENUM_HOG_STAT;
 
 typedef 
 enum player_role
-    {	ROLE_ZHUANG	= 0,
-	ROLE_XIAN	= ( ROLE_ZHUANG + 1 ) 
+    {
+        ROLE_ZHUANG	= 0,
+        ROLE_XIAN	= ( ROLE_ZHUANG + 1 ) 
     } 	ENUM_PLAYER_ROLE;
 
 typedef struct _tagChairInfo
     {
+    LONG hs_uid;
     ENUM_CHAIR_ENABLE hs_chair_enable;
     ENUM_HOG_STAT hs_hot_state;
     ENUM_PLAYER_ROLE hs_role;

@@ -20,6 +20,9 @@
     <Filter Include="Class">
       <UniqueIdentifier>{dfeb3f7c-a228-4f0d-9196-b52c284d9a0a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="log">
+      <UniqueIdentifier>{b37a58c1-fe74-43f7-81fa-c42750182401}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -36,6 +39,9 @@
     </ClCompile>
     <ClCompile Include="Hog.cpp">
       <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="..\comdata\DataProcLog.cpp">
+      <Filter>log</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +66,9 @@
     <ClInclude Include="GameData.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\comdata\DataProcLog.h">
+      <Filter>log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BaseHog.rc">
@@ -79,10 +88,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="BaseHog.idl">
+    <Midl Include="..\comdata\GameData.idl">
       <Filter>源文件</Filter>
     </Midl>
-    <Midl Include="..\comdata\GameData.idl">
+    <Midl Include="..\comdata\BaseHog.idl">
       <Filter>源文件</Filter>
     </Midl>
   </ItemGroup>

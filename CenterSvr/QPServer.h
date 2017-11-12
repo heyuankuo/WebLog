@@ -58,6 +58,7 @@ public:
 	STDMETHOD(Hog)(LONG nTableID, LONG nChairID, ENUM_HOG_STAT _hog);
 	STDMETHOD(CreateSub)(LONG subType, LONG tid);
 	STDMETHOD(StepThrough)(LONG nTableID);
+	STDMETHOD(DissltTable)(LONG tableId);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(QPServer), CQPServer)

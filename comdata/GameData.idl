@@ -23,10 +23,11 @@ typedef enum player_role
 	  ROLE_XIAN
 }ENUM_PLAYER_ROLE;
 
-
+// 椅子信息
 typedef struct _tagChairInfo 
 {
-	ENUM_CHAIR_ENABLE	hs_chair_enable;
+	LONG				hs_uid;			// 玩家ID 没有玩家时为0
+	ENUM_CHAIR_ENABLE	hs_chair_enable; //椅子是否能游戏
 	ENUM_HOG_STAT		hs_hot_state;	// 状态 未定， 叫，不叫
 	ENUM_PLAYER_ROLE	hs_role;		// 角色 未定，闲， 庄
 	LONGLONG			hs_chip;		// 筹
@@ -36,9 +37,9 @@ typedef struct _tagChairInfo
 // 座子信息
 typedef struct _tagTableInfo 
 {
-	DWORD		ti_tID; // 房间号
-	DWORD		ti_curCount; // 当前局数
-	DWORD		ti_allCount; // 总局数
-	LONGLONG	ti_lowScore; // 底分
-	DWORD		ti_hog;		// 当前hog
+	DWORD		ti_tID;			// 房间号,CenterData 中数组序号
+	DWORD		ti_curCount;	// 当前局数
+	DWORD		ti_allCount;	// 总局数
+	LONGLONG	ti_lowScore;	// 底分
+	DWORD		ti_hog;			// 当前hog
 }TableInfo , *PTableInfo;

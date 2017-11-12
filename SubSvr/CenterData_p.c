@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Nov 12 15:13:25 2017
+/* at Sun Nov 12 15:12:51 2017
  */
 /* Compiler settings for ..\comdata\CenterData.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
@@ -44,7 +44,7 @@
 #endif /* __RPCPROXY_H_VERSION__ */
 
 
-#include "CenterData_i.h"
+#include "CenterData_h.h"
 
 #define TYPE_FORMAT_STRING_SIZE   11                                
 #define PROC_FORMAT_STRING_SIZE   277                               

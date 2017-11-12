@@ -24,6 +24,9 @@ public:
 	// 前进一步
 	void StepThrough( LONG nTableID );
 
+	// 解散桌子
+	void DissltTable(LONG tableId);
+
 protected:
 	// 初始化控件句柄
 	LONG InitCtrHandle( LONG nTableID );

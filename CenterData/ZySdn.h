@@ -54,6 +54,10 @@ public:
 
 	STDMETHOD(CreateTable)(LONG* tableID);
 	STDMETHOD(Hog)( LONG tableID, LONG chairID, ENUM_HOG_STAT _hog);
+	STDMETHOD(SetChair)(LONG tableId, LONG chairId, LONG uid);
+	STDMETHOD(GetChair)(LONG tableID, LONG chairId, LONG* uid);
+	STDMETHOD(DissltTable)(LONG tableId);
+	STDMETHOD(GetHogMsg)(LONG talbeId, LONG * chairId, ENUM_HOG_STAT* _hogSlu);
 };
 
 OBJECT_ENTRY_AUTO(__uuidof(ZySdn), CZySdn)

@@ -4,7 +4,7 @@
 
 
  /* File created by MIDL compiler version 8.00.0603 */
-/* at Sun Nov 12 15:13:24 2017
+/* at Sun Nov 12 15:13:00 2017
  */
 /* Compiler settings for ..\comdata\CenterSvr.idl:
     Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
@@ -36,8 +36,8 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __CenterSvr_i_h__
-#define __CenterSvr_i_h__
+#ifndef __CenterSvr_h_h__
+#define __CenterSvr_h_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once

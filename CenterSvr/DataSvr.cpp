@@ -1,6 +1,6 @@
 #include "StdAfx.h"
 #include "DataSvr.h"
-#define			PRO_PATH		L"E:\\project\\VC++\\EXCEL_NPOI\\Demo\\Debug\\SubSvr.exe"
+#define			PRO_PATH		L"E:\\project\\VC++\\WebLog\\SubSvr\\x64\\Debug\\SubSvr.exe"
 
 DataSvr::DataSvr(void)
 {
@@ -33,7 +33,7 @@ LONG DataSvr::CreateSub( LONG nTableID )
 	// 构造命令行
 	wchar_t wcsCommandLine[64] = {0};
 	swprintf_s( wcsCommandLine, sizeof wcsCommandLine / sizeof(wchar_t), 
-		L"mi_hProcCtr:%ld,mi_hRCtr:%ld,mi_tID:%ld", m_gMsg[nTableID].mi_hProcCtr, m_gMsg[nTableID].mi_hRCtr, nTableID );
+		L"mi_hProcCtr:%lld,mi_hRCtr:%lld,mi_tID:%ld", (LONGLONG)m_gMsg[nTableID].mi_hProcCtr, (LONGLONG)m_gMsg[nTableID].mi_hRCtr, nTableID );
 	// 设置显示
 	STARTUPINFO si = {0}; 
 	si.cb = sizeof si;
@@ -55,10 +55,19 @@ void DataSvr::StepThrough( LONG nTableID )
 {
 	::WaitForSingleObject( m_gMsg[nTableID].mi_hRCtr, INFINITE );
 	::ResetEvent(m_gMsg[nTableID].mi_hRCtr);
-
 	::SetEvent(m_gMsg[nTableID].mi_hProcCtr);
 
 	::WaitForSingleObject( m_gMsg[nTableID].mi_hRCtr, INFINITE );
+}
+
+// 解散桌子
+void DataSvr::DissltTable(LONG tableId)
+{
+	StepThrough(tableId);
+	::CloseHandle(m_gMsg[tableId].mi_hRCtr);
+	::CloseHandle(m_gMsg[tableId].mi_hProcCtr);
+	m_gMsg[tableId].mi_hRCtr	= NULL;
+	m_gMsg[tableId].mi_hProcCtr = NULL;
 }
 
 DataSvr gloDataSvr;

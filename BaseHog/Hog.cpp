@@ -3,18 +3,38 @@
 #include "stdafx.h"
 #include "Hog.h"
 #include <time.h>
+#include "DataProcLog.h"
 
 #define			PERHOGTIME		24000  // 定时器
 
 // CHog
 
-// 获取实际数量
+// 获取实际玩家数量
 int CHog::GetCurPSum()
 {
 	int pSum = 0;
 	for(int i = 0; i < m_ChairSum; ++i)
 	{
 		if ( CHAIR_ENABLE == m_pChairs[i].hs_chair_enable)
+		{
+			++pSum;
+		}
+		else
+		{
+			// 不做任何事
+		}
+	}
+	return pSum;
+}
+
+// 获取抢庄数量
+int CHog::GetHogUpSum()
+{
+	int pSum = 0;
+	for (int i = 0; i < m_ChairSum; ++i)
+	{
+		if (CHAIR_ENABLE	== m_pChairs[i].hs_chair_enable && 
+			HOG_UP			== m_pChairs[i].hs_hot_state)
 		{
 			++pSum;
 		}
@@ -46,6 +66,7 @@ BOOL CHog::NextHog( int *nextHog)
 			TRUE == m_pChairs[i].hs_enableHog &&
 			CHAIR_ENABLE == m_pChairs[i].hs_chair_enable ) // 有人未表决
 		{
+			DataProcLog::WriteSigleLog("未表决 %d\n", i);
 			isOK = TRUE;
 			*nextHog = i;
 			return isOK;
@@ -67,24 +88,23 @@ int CHog::GetBanker()
 {
 	// 获取随机数
 	int result = -1;
-	int cursum = GetCurPSum(); // 有效数
+	int cursum = GetHogUpSum(); // 抢庄用户数
 	int rdsum = GenRand( 0, cursum ); // 有效数内的随机数
-	for( int i = 0; i < cursum; )
+	for( int i = 0, j = 0; j  < m_ChairSum; ++j)
 	{
-		if ( CHAIR_ENABLE == m_pChairs[i].hs_chair_enable) // 有效用户
+		if ( CHAIR_ENABLE == m_pChairs[j].hs_chair_enable &&
+			 HOG_UP == m_pChairs[j].hs_hot_state) // 有效用户
 		{
+			DataProcLog::WriteSigleLog("有效用户 %d\r\n", j);
 			if ( rdsum == i ) // 命中
 			{
-				result = i;
+				result = j;
+				break;
 			}
 			else
 			{
 				++i;
 			}
-		}
-		else
-		{
-			continue;
 		}
 	}
 

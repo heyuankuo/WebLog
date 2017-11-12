@@ -23,6 +23,9 @@
     <Filter Include="contrl">
       <UniqueIdentifier>{51440ee4-c5d2-42e9-9181-b7689aead4fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="log">
+      <UniqueIdentifier>{a08797bd-65e6-4ba0-8e32-2fd5941a1838}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -39,6 +42,9 @@
     </ClCompile>
     <ClCompile Include="DataSvr.cpp">
       <Filter>mode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\comdata\DataProcLog.cpp">
+      <Filter>log</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +69,9 @@
     <ClInclude Include="GameData.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\comdata\DataProcLog.h">
+      <Filter>log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CenterData.rc">
@@ -79,10 +88,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="CenterData.idl">
+    <Midl Include="..\comdata\GameData.idl">
       <Filter>源文件</Filter>
     </Midl>
-    <Midl Include="..\comdata\GameData.idl">
+    <Midl Include="..\comdata\CenterData.idl">
       <Filter>源文件</Filter>
     </Midl>
   </ItemGroup>

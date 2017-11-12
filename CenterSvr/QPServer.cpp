@@ -32,3 +32,11 @@ STDMETHODIMP CQPServer::StepThrough(LONG nTableID)
 	gloDataSvr.StepThrough(nTableID);
 	return S_OK;
 }
+
+
+STDMETHODIMP CQPServer::DissltTable(LONG tableId)
+{
+	// TODO: 在此添加实现代码
+	gloDataSvr.DissltTable(tableId);
+	return S_OK;
+}

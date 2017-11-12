@@ -76,10 +76,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="CenterSvr.idl">
+    <Midl Include="..\comdata\GameData.idl">
       <Filter>源文件</Filter>
     </Midl>
-    <Midl Include="..\comdata\GameData.idl">
+    <Midl Include="..\comdata\CenterSvr.idl">
       <Filter>源文件</Filter>
     </Midl>
   </ItemGroup>

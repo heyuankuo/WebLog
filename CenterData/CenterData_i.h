@@ -3,11 +3,11 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 10 13:55:55 2017
+ /* File created by MIDL compiler version 8.00.0603 */
+/* at Sun Nov 12 15:13:25 2017
  */
-/* Compiler settings for CenterData.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
+/* Compiler settings for ..\comdata\CenterData.idl:
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
@@ -48,6 +48,7 @@
 #ifndef __IZySdn_FWD_DEFINED__
 #define __IZySdn_FWD_DEFINED__
 typedef interface IZySdn IZySdn;
+
 #endif 	/* __IZySdn_FWD_DEFINED__ */
 
 
@@ -97,7 +98,26 @@ EXTERN_C const IID IID_IZySdn;
             /* [in] */ LONG chairID,
             /* [in] */ ENUM_HOG_STAT _hog) = 0;
         
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE SetChair( 
+            /* [in] */ LONG tableId,
+            /* [in] */ LONG chairId,
+            /* [in] */ LONG uid) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetChair( 
+            /* [in] */ LONG tableID,
+            /* [in] */ LONG chairId,
+            /* [retval][out] */ LONG *uid) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE DissltTable( 
+            /* [in] */ LONG tableId) = 0;
+        
+        virtual /* [id] */ HRESULT STDMETHODCALLTYPE GetHogMsg( 
+            /* [in] */ LONG talbeId,
+            /* [out] */ LONG *chairId,
+            /* [out] */ ENUM_HOG_STAT *_hogSlu) = 0;
+        
     };
+    
     
 #else 	/* C style interface */
 
@@ -109,7 +129,7 @@ EXTERN_C const IID IID_IZySdn;
             IZySdn * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IZySdn * This);
@@ -137,14 +157,22 @@ EXTERN_C const IID IID_IZySdn;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IZySdn * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *CreateTable )( 
             IZySdn * This,
@@ -155,6 +183,28 @@ EXTERN_C const IID IID_IZySdn;
             /* [in] */ LONG tableID,
             /* [in] */ LONG chairID,
             /* [in] */ ENUM_HOG_STAT _hog);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *SetChair )( 
+            IZySdn * This,
+            /* [in] */ LONG tableId,
+            /* [in] */ LONG chairId,
+            /* [in] */ LONG uid);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetChair )( 
+            IZySdn * This,
+            /* [in] */ LONG tableID,
+            /* [in] */ LONG chairId,
+            /* [retval][out] */ LONG *uid);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *DissltTable )( 
+            IZySdn * This,
+            /* [in] */ LONG tableId);
+        
+        /* [id] */ HRESULT ( STDMETHODCALLTYPE *GetHogMsg )( 
+            IZySdn * This,
+            /* [in] */ LONG talbeId,
+            /* [out] */ LONG *chairId,
+            /* [out] */ ENUM_HOG_STAT *_hogSlu);
         
         END_INTERFACE
     } IZySdnVtbl;
@@ -197,6 +247,18 @@ EXTERN_C const IID IID_IZySdn;
 
 #define IZySdn_Hog(This,tableID,chairID,_hog)	\
     ( (This)->lpVtbl -> Hog(This,tableID,chairID,_hog) ) 
+
+#define IZySdn_SetChair(This,tableId,chairId,uid)	\
+    ( (This)->lpVtbl -> SetChair(This,tableId,chairId,uid) ) 
+
+#define IZySdn_GetChair(This,tableID,chairId,uid)	\
+    ( (This)->lpVtbl -> GetChair(This,tableID,chairId,uid) ) 
+
+#define IZySdn_DissltTable(This,tableId)	\
+    ( (This)->lpVtbl -> DissltTable(This,tableId) ) 
+
+#define IZySdn_GetHogMsg(This,talbeId,chairId,_hogSlu)	\
+    ( (This)->lpVtbl -> GetHogMsg(This,talbeId,chairId,_hogSlu) ) 
 
 #endif /* COBJMACROS */
 

@@ -3,11 +3,11 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 7.00.0555 */
-/* at Fri Nov 10 08:58:58 2017
+ /* File created by MIDL compiler version 8.00.0603 */
+/* at Sun Nov 12 15:12:49 2017
  */
-/* Compiler settings for BaseHog.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
+/* Compiler settings for ..\comdata\BaseHog.idl:
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
@@ -36,8 +36,8 @@
 #include "ole2.h"
 #endif /*COM_NO_WINDOWS_H*/
 
-#ifndef __BaseHog_i_h__
-#define __BaseHog_i_h__
+#ifndef __BaseHog_h_h__
+#define __BaseHog_h_h__
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1020)
 #pragma once
@@ -48,6 +48,7 @@
 #ifndef __IHog_FWD_DEFINED__
 #define __IHog_FWD_DEFINED__
 typedef interface IHog IHog;
+
 #endif 	/* __IHog_FWD_DEFINED__ */
 
 
@@ -103,6 +104,7 @@ EXTERN_C const IID IID_IHog;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IHogVtbl
@@ -113,7 +115,7 @@ EXTERN_C const IID IID_IHog;
             IHog * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IHog * This);
@@ -141,14 +143,22 @@ EXTERN_C const IID IID_IHog;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             IHog * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         /* [id] */ HRESULT ( STDMETHODCALLTYPE *BindHogData )( 
             IHog * This,

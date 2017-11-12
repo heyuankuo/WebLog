@@ -18,6 +18,10 @@ import "GameData.idl";
 interface IZySdn : IDispatch{
 	[id(1)] HRESULT CreateTable([out,retval] LONG* tableID);
 	[id(2)] HRESULT Hog([in] LONG tableID, [in] LONG chairID, [in] ENUM_HOG_STAT _hog);
+	[id(3)] HRESULT SetChair([in] LONG tableId, [in] LONG chairId, [in] LONG uid);
+	[id(4)] HRESULT GetChair([in] LONG tableID, [in] LONG chairId, [out, retval] LONG* uid);
+	[id(5)] HRESULT DissltTable([in] LONG tableId);
+	[id(6)] HRESULT GetHogMsg([in] LONG talbeId, [out] LONG * chairId, [out] ENUM_HOG_STAT* _hogSlu);
 };
 [
 	uuid(9A0A0330-53C9-4BE8-AA74-6023CE0D1D37),
