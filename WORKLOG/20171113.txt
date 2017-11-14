@@ -1,0 +1,51 @@
+tar :
+
+	测试intefsctrl32.dll 参考链接http://blog.163.com/yuyang_tech/blog/static/2160500832013121113653631/
+	dumpbin /exports [dllpath]
+	测试内存文件句柄----------------------------------------------------------------未完成
+	
+	typedef struct _INTEFS_HEADER_LEVEL_CONTROL 
+{
+	USHORT usMajorVersion;      //控制版本（初始1.0）
+	USHORT usMinorVersion;
+	
+	ULONG  ulCropMark;			//企业标识
+	ULONG  ulKeyID;                  //秘钥ID，应用层允许的秘钥ID集包含本文件的秘钥ID是才能打开，用于同一企业需要对不同部门或分部进行隔离时用usKeyID进行隔离，避免原来需要插若干锁的不便。
+
+	ULONG         fileType;			     // 取值为INTEFS_FILE_TYPE_LEVEL(分级)，INTEFS_FILE_TYPE_USE_FILEKEY（用ulKeySeed产生密码）
+
+	unsigned char fileLevel;         	// 该文件对应的级别(0-255,0级别最高，缺省为255)
+
+	ULONG         ulKeySeed;			// 加密文件头部，表示种子密钥
+	ULONG         ulKeyCRC32;			// 密钥的CRC32校验码
+	char          filePassword[32];  	// 驱动代码中加密文件上下文，在加密文件头部内容为0,这里为什么是32，不是20？？？？
+	USHORT        usCryptAlgorithms; 	// 加密算法（目前只支持0－Seal算法）
+
+	// 定义使用的加密算法，等等信息，这里放和文件关联的信息
+	// ....
+	unsigned char	szUserName[20];  	// 用户名。用于实现陕飞：文件授权给某用户，才能打开。ChenYF，2010.4.20
+	ULONG         ulOFPower;         	// ChenYF,2011.4.21，新增数据，用户记录Office文件的权限。用于支持Office特定加密
+
+} INTEFS_HEADER_LEVEL_CONTROL, *PINTEFS_HEADER_LEVEL_CONTROL;	
+// 在当前进程中直接打开文件读取内容，判断是否是加密文件，同时返回LevelInfo（供非授权进程调用），返回0表示是加密文件，非0是错误产生的行号。
+序号：74	INTEFSCTRL_API int __stdcall IntefsCtrl_IsEncryptFileEx(_xin char *pFullPath, _xout INTEFS_HEADER_LEVEL_CONTROL *pLevelInfo)
+																
+	获取vs2013-------------------------------------------完成
+	弄清楚IntefsCtrl_IsEncryptFileEx---------------------完成
+	不定参数的使用---------------------------------------完成
+	var_start 与 var_end;
+	SignalR----------------------------------------------未完成
+	Razor测试--------------------------------------------完成
+	Contrl向View发送数据---------------------------------完成
+	ViewData与ViewBag
+	参考链接https://www.cnblogs.com/wintersun/archive/2012/01/21/2328563.html
+	View向Contrl发送数据---------------------------------完成
+	控制器返回类型
+	参考链接https://www.cnblogs.com/ljl0513/p/4691166.html
+	输入参数 https://www.cnblogs.com/M-LittleBird/p/5855973.html
+	@RenderBody测试--------------------------------------未完成
+	MVC Ajax---------------------------------------------完成
+	参考链接：https://www.cnblogs.com/liluping860122/archive/2013/05/25/3098995.html
+	
+	 
+	

@@ -7,6 +7,7 @@
 /SubSvr/*.sdf
 /SubSvr/*.db
 /SubSvr/SubSvr.VC.VC.opendb
+/SubSvr/SubSvr.v12.suo
 /SubSvr/ipch/*
 /SubSvr/.vs/*
 /SubSvr/x64/*
