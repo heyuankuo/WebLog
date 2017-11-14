@@ -1,0 +1,79 @@
+tar :
+
+	将文件写入System.IO.MemaryStream------------------------------------未完成
+	将System.IO.MemaryStream写入文件------------------------------------未完成
+	
+	int DecryptFileWithHandle(HANDLE hFile)
+{
+	int nRet = 0;	
+	if (hFile == INVALID_HANDLE_VALUE)
+		return __LINE__;
+
+	// 检测是不是加密文件
+	INTEFS_HEADER_LEVEL_CONTROL levelInfo = {0};
+	nRet = IsEncryptFileWithHandle(hFile, &levelInfo);
+	if (nRet)
+	{
+		return nRet;
+	}
+
+	//判断是否能解密，并返回password
+	unsigned char pPasswordKey[21]={0};
+	if (IntefsCtrl_JudgePower(&levelInfo,pPasswordKey,20))
+		return __LINE__;
+
+	// 每次64k
+	DWORD nBufLen = INTEFS_HEADER_POOL_SIZE*16;
+	unsigned char *pBuffer = (unsigned char *)malloc(nBufLen);
+	if (!pBuffer)
+	{
+		return __LINE__;
+	}
+
+	LARGE_INTEGER oldOff = {0};
+	LARGE_INTEGER newOff = {0};
+	SetFilePointerEx(hFile, newOff, &oldOff, FILE_CURRENT);
+
+	DWORD dwNumRead = 0;
+	DWORD dwNumWrite = 0;
+	DWORD dwReadOffset = 0;
+	DWORD dwWriteOffset = 0;
+	do 
+	{
+		SetFilePointer(hFile, dwReadOffset + INTEFS_HEADER_POOL_SIZE, NULL, FILE_BEGIN);
+
+		dwNumRead = 0;
+		memset(pBuffer, 0, nBufLen);
+		if (ReadFile(hFile, pBuffer, nBufLen, &dwNumRead, NULL) && dwNumRead)
+		{
+			IntefsCtrl_DecryptBuffer(pBuffer, 
+				pBuffer, 
+				dwNumRead, 
+				dwReadOffset, 
+				pPasswordKey);
+
+			SetFilePointer(hFile, dwWriteOffset, NULL, FILE_BEGIN);
+			if (TrueWriteFile(hFile, pBuffer, dwNumRead, &dwNumWrite, NULL)==0 || dwNumRead!=dwNumWrite)
+			{
+				SetFilePointer(hFile, oldOff.LowPart, &oldOff.HighPart, FILE_BEGIN);
+				free(pBuffer);
+				return __LINE__;
+			}
+
+			dwReadOffset += dwNumRead;
+			dwWriteOffset += dwNumRead;
+		}
+	} while (dwNumRead == nBufLen);
+
+	SetEndOfFile(hFile);
+	
+	free(pBuffer);
+
+	return 0;
+}
+
+
+	DLL 打包---------------------------------------------------未完成
+	添加OLE对象------------------------------------------------未完成
+	创建场景---------------------------------------------------未完成
+	1 绘制底图
