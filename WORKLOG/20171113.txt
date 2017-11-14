@@ -1,0 +1,3 @@
+tar:
+	.net ajax测试----------------------未完成
+	$('').click(data, function(){}) 中data----未完成
