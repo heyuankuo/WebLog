@@ -1,0 +1,51 @@
+tar:
+	DLL 打包---------------------------------------------------完成
+	如何在atl 中引入lib
+	添加OLE对象------------------------------------------------完成
+	创建场景---------------------------------------------------未完成
+	图片读取---------------------------------------------------完成
+	参考链接https://www.cnblogs.com/wei325/p/4748324.html
+	http://blog.csdn.net/shenwb110/article/details/53690420
+	http://www.it1352.com/219766.html
+	
+	获取所有对象 
+	FileStream ^fStrm = File::Open("D:\\2.xls", FileMode::OpenOrCreate, FileAccess::ReadWrite, FileShare::Read);
+	HSSFWorkbook ^m_gcWK = gcnew HSSFWorkbook(fStrm);
+
+	for each (HSSFObjectData ^xx in m_gcWK->GetAllEmbeddedObjects())
+	{
+		String ^name = xx->OLE2ClassName;
+		System::Type ^_typ = xx->GetType();
+		name = "";
+		
+	}
+	
+	获取图像
+	http://blog.csdn.net/metal1/article/details/52791862
+	for each (HSSFPictureData ^pic in m_gcWK->GetAllPictures())
+	{
+		//pic->
+		String ^ext = pic->SuggestFileExtension();
+		FileStream ^fStrm = File::Open("D:\\1.jpg", FileMode::OpenOrCreate, FileAccess::ReadWrite, FileShare::Read);
+		fStrm->Write(pic->Data, 0, pic->Data->Length);
+		fStrm->Close();
+		break;
+	}
+	
+	获取指定位置的图像-------------------------
+	http://blog.csdn.net/metal1/article/details/52791862
+	http://blog.csdn.net/dym3093/article/details/50783757
+	NPOI::SS::UserModel::IClientAnchor
+	
+	安装SignalR------------------------------------------------未完成
+	创建桌子---------------------------------------------------未完成
+	创建日志记录-----------------------------------------------未完成
+	
+	下载工程--------完成
+	创建版本基线----未完成
+	连接数据库------完成
+	添加web表格-----未完成
+	
+	16:30 结束工作
+	
+	
