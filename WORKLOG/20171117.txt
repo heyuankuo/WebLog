@@ -2,8 +2,39 @@ tar:
 	release编译------------------------------------------------完成
 	9:30 完成
 	
-	回归版本并完成更改-----------------------------------------未完成
-	10:00
+	回归版本并完成更改-----------------------------------------完成	
+	安装JDK----------------------------------------------------完成
+	java调用COM组件Demo----------------------------------------未完成
+	参考链接 http://blog.csdn.net/zp357252539/article/details/51586783
+	
+	声明函数指针
+	(IfsCtrl_JP)	IntefsCtrl_JudgePower                  	@87 NONAME
+	(IfsCtrl_DB)	IntefsCtrl_DecryptBuffer               	@88 NONAME
+	(IfsCtrl_EB)	IntefsCtrl_EncryptBuffer               	@89 NONAME
+	(IfsCtrl_GFH)	IntefsCtrl_GenerateFileHead            	@90 NONAME
+	(IfsCtrl_IEFEX)	IntefsCtrl_IsEncryptFileExW            	@80 NONAME
+	(IfsCtrl_EFEX)	IntefsCtrl_EncryptFileEx				@73	加密	
+	11:30 完成
+	
+	修改链接方式
+	添加加载库函数---------------------------------------------完成
+	intefsctrl64.dll/intefsctrl32.dll
+	加载dll 填充函数指针
+	添加卸载库函数---------------------------------------------完成
+	14：00完成
+	输出测试
+	
+	修改遍历数据函数-------------------------------------------未完成
+	修改为全局 gcroot< ^>有时间测试一下是否可以不用gcnew
+	添加单独加载XLS/XLSX文件函数-------------------------------完成
+	添加单独加载XLS/XLSX文件函数-------------------------------完成
+	
+	修改遍历图片函数-------------------------------------------未完成
+	GetEnumerator() 函数使用
+	https://www.cnblogs.com/mahongbiao/p/3760878.html
+	测试一下怎么弄
+	添加加密函数（）
+	16:50完成
 	
 	创建大厅---------------------------------------------------完成
 	创建桌子列表
