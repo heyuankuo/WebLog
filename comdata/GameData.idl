@@ -42,4 +42,5 @@ typedef struct _tagTableInfo
 	DWORD		ti_allCount;	// 总局数
 	LONGLONG	ti_lowScore;	// 底分
 	DWORD		ti_hog;			// 当前hog
+	DWORD		ti_prvusHog;	// 前一局hog
 }TableInfo , *PTableInfo;

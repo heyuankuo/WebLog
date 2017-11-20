@@ -24,3 +24,8 @@
 /WebDemo/Release/*
 /WebDemo/*.sdf
 /WebDemo/x64/*
+
+/BaseBet/Debug/*
+/BaseBet/Release/*
+/BaseBet/*.sdf
+/BaseBet/x64/*

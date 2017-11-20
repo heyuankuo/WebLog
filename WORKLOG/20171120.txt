@@ -1,0 +1,41 @@
+tar:
+	编写下载---------------------------------------------------未完成
+	创建工程------------完成
+	添加依赖项(公共数据类)-------------未完成
+	进入循环前刷新下载权限问题
+	
+	9:30前完成
+	svn密码----------------------------------------------------完成
+	svn 远端仓库svn://10.8.8.187/CustomDev/trunk/InteKEY9.1_WeiChai/Tools/ReadXLS
+	svn 账号密码 HeYK		hyk1234
+
+	注册问题-------------------------------------------------------------未完成
+	https://jingyan.baidu.com/article/fd8044fac45ed95031137ad6.html
+	Failed to register output. Please try enabling Per-user Redirection or register the component from a command prompt with elevated permissions
+
+	
+	测试一下到http://10.8.10.66/InteKEY9.1/handler/ClientWebApi.ashx----完成
+	operatetype=macerification
+	macaddress=34-F3-9A-4A-31-02
+	
+	获取本机MAC地址----------------------------------------------------未完成
+	参考http://www.jb51.net/article/52587.htm
+	https://msdn.microsoft.com/en-us/library/windows/desktop/aa365917(v=vs.85).aspx
+	http://bbs.csdn.net/topics/330265498
+	
+	下载jsoncpp--------------------------------------------------------完成
+	http://blog.csdn.net/hailong0715/article/details/51942736
+	测试 不存在 success 的情况-----------------------------------------未完成
+	
+	java调用COM组件Demo----------------------------------------未完成
+	参考链接 http://blog.csdn.net/zp357252539/article/details/51586783
+	
+	修改遍历数据函数-------------------------------------------未完成
+	修改为全局 gcroot< ^>有时间测试一下是否可以不用gcnew
+
+	修改遍历图片函数-------------------------------------------未完成
+	GetEnumerator() 函数使用
+	https://www.cnblogs.com/mahongbiao/p/3760878.html
+	测试一下怎么弄
+	添加加密函数（）
+	16:50完成

@@ -1,0 +1,36 @@
+// BaseBet.idl : BaseBet 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(BaseBet.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "GameData.idl";
+
+[
+	object,
+	uuid(CE2EDD49-8C62-49FD-82A6-74D015240694),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ITESTIFACE : IDispatch{
+};
+[
+	uuid(62E61E84-F237-4949-AE8C-2DACBE41B712),
+	version(1.0),
+]
+library BaseBetLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(18B328B0-E499-43C8-A9EB-B0C7C427AC31)		
+	]
+	coclass TESTIFACE
+	{
+		[default] interface ITESTIFACE;
+	};
+};
+
+import "shobjidl.idl";

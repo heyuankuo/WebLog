@@ -1,0 +1,54 @@
+#pragma comment(lib, "ws2_32.lib")
+void testMac()
+{
+	WORD wVersionRequested;
+	WSADATA wsaData;
+	int err;
+
+	wVersionRequested = MAKEWORD(2, 2);
+
+	err = WSAStartup(wVersionRequested, &wsaData);
+	if (err != 0) 
+	{
+		printf("WSAStartup failed with error: %d\n", err);
+		return ;
+	}
+
+	// 创建套接字
+	SOCKET svrSock = socket(AF_INET, SOCK_STREAM, 0);
+	if (INVALID_SOCKET == err)
+	{
+		err = ::GetLastError();
+		return;
+	}
+
+	// 构造地址
+	SOCKADDR_IN svraddr = { 0 };
+	svraddr.sin_family = AF_INET;
+	svraddr.sin_addr.S_un.S_addr = inet_addr("10.8.10.66");
+	svraddr.sin_port = htons(80);
+
+	// 创建连接
+	err = connect(svrSock, (SOCKADDR *)&svraddr, sizeof svraddr);
+	if (SOCKET_ERROR == err)
+	{
+		err = ::GetLastError();
+		return;
+	}
+
+	// 请求数据
+	char *requst =	"POST /InteKEY9.1/handler/ClientWebApi.ashx HTTP/1.1\n"
+					"Host: 10.8.10.66\n"
+					"Content-Type: application/x-www-form-urlencoded\n"
+					"Content-Length: 55\n"
+					"\n"
+					"operatetype=macerification&macaddress=34-F3-9A-4A-31-02\n";
+
+	err = send(svrSock, requst, strlen(requst), 0);
+	
+	char recvBuff[256] = { 0 };
+	recv( svrSock, recvBuff, sizeof recvBuff, 0);
+
+	closesocket(svrSock);
+	WSACleanup();
+}

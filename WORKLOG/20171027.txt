@@ -23,3 +23,5 @@ tar:
 	参考文档：http://blog.sina.com.cn/s/blog_8e9a79230101a6kz.html
 	
 	REGCLS_MULTI_SEPARATE
+	
+	C:\Windows\SysWOW64\regsvr32
