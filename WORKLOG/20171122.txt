@@ -1,0 +1,21 @@
+
+	编写下载---------------------------------------------------未完成
+	进入循环前刷新下载权限问题
+	java调用COM组件Demo----------------------------------------未完成
+	参考链接 http://blog.csdn.net/zp357252539/article/details/51586783
+
+	【简要描述】 修正未加密文件不能正常读取的BUG---------------完成
+	关于非加密文件读取的MAC验证问题
+	头文件引用目录修改-----------------------------------------完成
+	64位32位---------------------------------------------------完成
+		http://blog.csdn.net/maxwoods/article/details/51277133
+	C语言调用COM组件-------------------------------------------完成
+		http://bbs.csdn.net/topics/90346575
+		https://www.cnblogs.com/yasepix/p/6098902.html
+		http://blog.csdn.net/wangwenjing90/article/details/9047853/
+	【BabylonJS】----------------------------------------------完成
+	https://makina-corpus.com/blog/metier/2014/how-to-use-multimaterials-with-a-tiled-ground-in-babylonjs
+	http://www.babylonjs-playground.com/
+	http://blog.sina.com.cn/s/blog_b54e5f1d0102wam5.html
+	http://blog.csdn.net/aceway/article/details/51273194
+	

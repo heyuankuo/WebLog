@@ -1,0 +1,23 @@
+	编写下载---------------------------------------------------未完成
+	进入循环前刷新下载权限问题
+	java调用COM组件Demo----------------------------------------未完成
+	参考链接 http://blog.csdn.net/zp357252539/article/details/51586783
+	
+	分类问题测试-----------------------------------------------未完成
+	double func( double x, double y){x^2 + y^2};		
+	x + y - 6 = 0;
+	F( x, y, z ){ x^2 + y^2 + λ*x + λ*y - λ*6 }
+	2x + λ = 0;
+	2y + λ = 0;
+	x + y - 6 = 0;
+	拉格朗日乘数法
+	数据可视
+	
+	.NET访问非托管内存-----------------------------------------未完成
+	http://blog.csdn.net/leonwei/article/details/41940963
+	
+	测试名称对，但文件损坏或者其他情况-------------------------未完成
+	
+	INTEFSCTRL_API int __stdcall IntefsCtrl_EncryptFileEx(_xin char *pFullPath, ULONG ulKeyID = -1, short nLevel = -1, char *szUserName = NULL);
+	
+	加密函数宽字符异常

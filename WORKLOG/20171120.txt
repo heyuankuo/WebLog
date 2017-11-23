@@ -18,7 +18,7 @@ tar:
 	operatetype=macerification
 	macaddress=34-F3-9A-4A-31-02
 	
-	获取本机MAC地址----------------------------------------------------未完成
+	获取本机MAC地址----------------------------------------------------完成
 	参考http://www.jb51.net/article/52587.htm
 	https://msdn.microsoft.com/en-us/library/windows/desktop/aa365917(v=vs.85).aspx
 	http://bbs.csdn.net/topics/330265498
