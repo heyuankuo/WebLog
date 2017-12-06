@@ -1,0 +1,112 @@
+	日志文件名称修改-------------------------------------------完成
+	日志时间戳错误---------------------------------------------完成
+	http://blog.csdn.net/wangqing_12345/article/details/52092728
+	https://www.cnblogs.com/Asa-Zhu/archive/2012/08/30/2664341.html
+	
+	文件拖拽到列表框-------------------------------------------完成
+	http://blog.csdn.net/feihuadao/article/details/6054618
+
+	选中文件显示在列表中---------------------------------------完成
+	http://blog.csdn.net/friendan/article/details/8790831
+	在列表初始化中添加列
+	m_List.InsertColumn(0,_T("第n轮"),LVCFMT_LEFT,100);  
+    m_List.InsertColumn(1,_T("n号出约瑟夫环"),LVCFMT_LEFT,350);  
+  
+    m_List.InsertItem(0,_T("google"));   //第一行，第一列  
+    m_List.SetItemText(0,1,_T("baidu"));//第一行，第二列  
+	
+	创建仓库---------------------------------------------------完成
+	修改生成后事件---------------------------------------------完成
+	标题修改---------------------------------------------------完成
+	http://blog.csdn.net/pengmutian/article/details/44459285
+	
+	创建上传线程-----------------------------------------------完成
+	http://blog.csdn.net/xmnathan/article/details/34415621
+	获取列表数据-----------------------------------------------完成
+	关闭窗口事件-----------------------------------------------完成
+	 "×"按钮 WM_CLOSE
+	 
+	临界区-----------------------------------------------------完成
+	http://blog.csdn.net/u010953266/article/details/47838069
+	EnterCriticalSection（& _critical）
+	LeaveCriticalSection(& _critical)
+	创建上传过场-----------------------------------------------完成
+	https://www.cnblogs.com/graphics/archive/2011/05/23/1964273.html
+	
+	创建上传事件同步句柄---------------------------------------未完成
+	MFC 非模态窗口创建-----------------------------------------未完成
+	文件上传---------------------------------------------------未完成
+	svm--------------------------------------------------------未完成
+	
+	WeiChai
+	svn://10.8.8.187/CustomDev/trunk/InteKEY9.1_WeiChai/Common 
+	svn://10.8.8.187/CustomDev/trunk/InteKEY9.1_WeiChai/Include
+	
+	
+	int UploadFileToServer(PCONTEXT_HANDLE_TYPE hContext, WCHAR szLocFullFileName[], char szRemFileName[])
+	{
+		HANDLE hLocFile = CreateFileW(szLocFullFileName, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0l, NULL);//ChenYF,2007.10.16,允许共享读
+		if (hLocFile == INVALID_HANDLE_VALUE)
+		{
+			return ERROR_FILE_READERR;
+		}
+
+		DWORD nTotalSize = GetFileSize(hLocFile, NULL);
+		if (nTotalSize == -1)
+		{
+			CloseHandle(hLocFile);
+			return ERROR_FILE_READERR;
+		}
+
+		long hRemotFile = 0;
+		int nRet = RPCIFS_RemoteCreate(hContext, szRemFileName,&hRemotFile);
+		if (nRet) return nRet;
+		char* pData = NULL;
+		DWORD nSize = MAX_BUFF_SIZE;
+		pData = (PCHAR)malloc(nSize);
+
+		//////////////////////////////////////////////////////////////////////////
+		while (nTotalSize>0)
+		{
+			memset(pData, 0, nSize);
+			DWORD nRealSize =0;
+			if (!ReadFile(hLocFile, pData, nSize, &nRealSize, NULL))
+			{
+				CloseHandle(hLocFile);
+				RPCIFS_RemoteClose(hContext, hRemotFile);
+				free(pData);
+				return ERROR_FILE_READERR;
+			}
+			nRet = RPCIFS_RemoteWrite(hContext, hRemotFile,nRealSize,pData);
+			if (nRet)
+			{
+				CloseHandle(hLocFile);
+				RPCIFS_RemoteClose(hContext, hRemotFile);
+				free(pData);
+				return nRet;
+			}
+			nTotalSize -= nRealSize;
+		}
+		free(pData);
+		CloseHandle(hLocFile);
+		return RPCIFS_RemoteClose(hContext, hRemotFile);
+	}
+	
+	
+	
+    // TODO: 在此添加消息处理程序代码和/或调用默认值   
+    char szFilePathName[_MAX_PATH+1]    =    {0};      
+  
+        //得到文件个数      
+    UINT nNumOfFiles = DragQueryFile(hDropInfo, 0xFFFFFFFF, NULL, 0);   
+  
+    for (UINT nIndex=0 ; nIndex< nNumOfFiles; ++nIndex) {   
+        //　得到文件名   
+         DragQueryFile(hDropInfo, nIndex, (LPTSTR)szFilePathName, _MAX_PATH);   
+        // 有了文件名就可以想干嘛干嘛了　:P   
+         AfxMessageBox((LPCTSTR)szFilePathName);   
+     }      
+  
+     DragFinish(hDropInfo);     
+  
+     CDialog::OnDropFiles(hDropInfo);   

@@ -1,0 +1,119 @@
+	
+	创建上传过场-----------------------------------------------完成
+	获取列的Rect
+	CRect rect;
+	convDlg->m_List.GetSubItemRect(0, 0, LVIR_BOUNDS, rect);
+	ExceptionLog::InputLog("left:%d", rect.left);
+	ExceptionLog::InputLog("right:%d", rect.right);
+	ExceptionLog::InputLog("top:%d", rect.top);
+	ExceptionLog::InputLog("bottom:%d", rect.bottom);
+	https://www.cnblogs.com/graphics/archive/2011/05/23/1964273.html
+	
+	背景刷新问题-----------------------------------------------完成
+	ModifyStyle(0,WS_CLIPCHILDREN|WS_CLIPSIBLINGS);
+	修改控件风格
+	
+	创建上传事件同步句柄---------------------------------------完成
+	上传过程---------------------------------------------------完成
+	先建立连接
+	m_Conn.GetContextHandle()
+	
+	从ID获取控件-----------------------------------------------完成
+	this->GetDlgItem(IDC_BUTTON_OK); // 转换下载
+	this->GetDlgItem(IDOK); // 上传
+	
+	按钮不可用-------------------------------------------------完成
+	http://blog.csdn.net/shouhouxiaomuwu/article/details/28880749
+
+	上传成功返回值问题-----------------------------------------完成
+	成功返回0	
+	
+	文件夹上传-------------------------------------------------完成
+	从文件夹中提取文件名称-------------------------------------完成	
+	下载-------------------------------------------------------完成
+	判断是否XLS文件--------------------------------------------完成
+	首先判断文件夹---------------------------------------------完成
+	当目录为文件夹时，显示文件夹-------------------------------完成
+	上传时处理文件夹-------------------------------------------完成
+	文件夹下载-------------------------------------------------完成
+	遍历文件夹中文件-------------------------------------------完成
+	
+	空格问题---------------------------------------------------未完成
+	
+	CFileFind 大小写问题---------------------------------------未完成
+	CFileFind 大小写问题---------------------------------------未完成
+	
+	MFC 非模态窗口创建-----------------------------------------未完成
+	文件上传---------------------------------------------------未完成
+	svm--------------------------------------------------------未完成
+	
+	int DownloadFileFromServer(PCONTEXT_HANDLE_TYPE hContext, WCHAR szLocFullFileName[], char szRemFileName[])
+{
+	ULONG hRemotFile = 0;
+	ULONG nTotalFileSize = 0;
+	int nRet = RPCIFS_RemoteOpen(hContext, (PUCHAR)szRemFileName, &hRemotFile, &nTotalFileSize);
+	if (nRet) return nRet;
+
+	SureLocalDirExist(szLocFullFileName);
+
+	int dReadOK = 0;
+	long nSizeBuffer = 3000,nActualRead_size=0;
+	char sBuffer[3000];
+	HANDLE hWriteFile;
+	hWriteFile= CreateFileW(szLocFullFileName,GENERIC_WRITE,FILE_SHARE_WRITE,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);
+	if(hWriteFile == INVALID_HANDLE_VALUE)
+	{
+		RPCIFS_RemoteClose(hContext, hRemotFile);
+		return -3;
+	}
+
+	while(dReadOK == 0)
+	{
+		dReadOK = RPCIFS_RemoteRead(hContext, hRemotFile, nSizeBuffer, &nActualRead_size, sBuffer);
+		if(dReadOK !=0 )
+		{
+			RPCIFS_RemoteClose(hContext, hRemotFile);
+			CloseHandle(hWriteFile);
+			return -4;
+		}
+		if(nActualRead_size == 0)
+			break;
+
+		long nActualWrite_size;
+		WriteFile(hWriteFile,sBuffer,nActualRead_size,(unsigned long *)(&nActualWrite_size),NULL);
+
+		if(nActualRead_size !=nSizeBuffer)
+			break;
+	}
+	CloseHandle(hWriteFile);
+	return RPCIFS_RemoteClose(hContext, hRemotFile);
+}
+
+
+void CMFCProjectView::TrvXLSFromFolder(CString& dir, std::vector<CString>& vec)
+{
+    CFileFind ff;
+    if (dir.Right(1) != "\\")
+        dir += "\\";
+    dir += "*.*";
+     
+    BOOL ret = ff.FindFile(dir);
+    while (ret)
+    {
+        ret = ff.FindNextFile();
+        if (ret != 0)
+        {
+            if (ff.IsDirectory() && !ff.IsDots())
+            {
+                CString path = ff.GetFilePath();
+                TrvXLSFromFolder(path, vec);
+            }
+            else if (!ff.IsDirectory() && !ff.IsDots())
+            {
+                CString name = ff.GetFileName();
+                CString path = ff.GetFilePath();
+                vec.push_back(path);
+            }
+        }
+    }
+}
