@@ -1,4 +1,4 @@
-ren	C:\InteKey\MdlMyzh MdlMyzh-
+ren	C:\InteKey\MdlFileConvrn MdlFileConvrn-
 taskkill /f /im TyEnc64.exe
-copy	.\..\Bin\x64\Release\MdlMyzh64.dll C:\InteKey\MdlMyzh-\MdlMyzh64.dll
-ren	C:\InteKey\MdlMyzh- MdlMyzh
+copy .\..\Bin\x64\Release\MdlFileConvrn64.dll C:\InteKey\MdlFileConvrn-\MdlFileConvrn.dll
+ren	C:\InteKey\MdlFileConvrn- MdlFileConvrn

@@ -1,0 +1,79 @@
+DWORD i, dwCurrIndex;
+    char szPrintablePhysAddr[256];
+    char szType[128];
+    char szIpAddr[128];
+
+	// 首先获取ARP表
+	PMIB_IPNETTABLE pIpNetTable = MyGetIpNetTable(TRUE); 
+    if (pIpNetTable == NULL)
+    {
+        printf( "pIpNetTable == NULL in line %d\n", __LINE__);
+        return -1;
+    }
+
+	// 获取IP地址表，以便根据它将ARP表项中的接口索引转化为IP地址
+	PMIB_IPADDRTABLE pIpAddrTable = MyGetIpAddrTable(TRUE);
+
+	// 当前的适配器索引。注意，ARP表应该按照接口索引排序
+    dwCurrIndex = pIpNetTable->table[0].dwIndex;
+    if(InterfaceIdxToInterfaceIp(pIpAddrTable, dwCurrIndex, szIpAddr))
+    {
+        printf("\nInterface: %s on Interface 0x%X\n", szIpAddr, dwCurrIndex);
+        printf("  Internet Address      Physical Address      Type\n");
+    }
+    else
+    {
+        printf("Error: Could not convert Interface number 0x%X to IP address.\n",
+                    pIpNetTable->table[0].dwIndex);
+        return -1;
+    }
+    
+	// 打印出索引为dwCurrIndex的适配器上的ARP表项
+    for(i = 0; i < pIpNetTable->dwNumEntries; ++i)
+    {
+		// 不相等则说明要打印下一个适配器上的ARP表项了
+        if(pIpNetTable->table[i].dwIndex != dwCurrIndex)
+        {
+            dwCurrIndex = pIpNetTable->table[i].dwIndex;
+            if (InterfaceIdxToInterfaceIp(pIpAddrTable, dwCurrIndex, szIpAddr))
+            {
+                printf("Interface: %s on Interface 0x%X\n", szIpAddr, dwCurrIndex);
+                printf("  Internet Address      Physical Address      Type\n");
+            }
+            else
+            {
+                printf("Error: Could not convert Interface number 0x%X to IP address.\n",
+                    pIpNetTable->table[0].dwIndex);
+                return -1;
+            }
+        }
+
+		// 打印出此ARP表项中的数据
+		// MAC地址
+		u_char *p = pIpNetTable->table[i].bPhysAddr;
+        sprintf(szPrintablePhysAddr, "%02X-%02X-%02X-%02X-%02X-%02X", p[0], p[1], p[2], p[3], p[4], p[5]);
+		// IP地址
+		struct in_addr inadTmp;
+        inadTmp.s_addr = pIpNetTable->table[i].dwAddr;
+		// 类型
+        switch (pIpNetTable->table[i].dwType)
+        {
+        case 1:
+            strcpy(szType,"other");
+            break;
+        case 2:
+            strcpy(szType,"invalidated");
+            break;
+        case 3:
+            strcpy(szType,"dynamic");
+            break;
+        case 4: 
+            strcpy(szType,"static");
+            break;
+        default:
+            strcpy(szType,"invalidType");
+        }
+        printf("  %-16s      %-17s     %-11s\n", inet_ntoa(inadTmp), szPrintablePhysAddr, szType);
+        
+    }
+	return 0;
