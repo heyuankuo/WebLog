@@ -1,0 +1,27 @@
+D3D11绘制三角形--------------------------------完成
+D3D11 视角变换---------------------------------完成
+
+D3D11教程
+参考链接：http://www.cnblogs.com/zhangbaochong/category/780451.html
+
+龙书中译
+https://www.zhihu.com/question/31992416
+
+hlsl 离线编辑
+http://blog.csdn.net/pizi0475/article/details/45484247
+
+HLSL 基础 http://www.cnblogs.com/zhangbaochong/p/5418748.html
+
+HLSL 编译工具 http://blog.csdn.net/xueyedie1234/article/details/51354458
+
+D3D11_MAPPED_SUBRESOURCE mappedData;
+HR(md3dImmediateContext->Map(mWavesVB, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedData));
+
+Vertex* v = reinterpret_cast<Vertex*>(mappedData.pData);
+for(UINT i = 0; i < mWaves.VertexCount(); ++i)
+{
+	v[i].Pos = mWaves[i];
+	v[i].Color = XMFLOAT4(0.0f, 0.0f, 0.0f, 1.0f);
+}
+
+md3dImmediateContext->Unmap(mWavesVB, 0);

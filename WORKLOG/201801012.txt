@@ -1,0 +1,32 @@
+D3D11光照--------------------------未完成
+D3D11
+
+// 输入: 
+// 1.一个顶点数组(mVertices)，每个顶点都有一个位置分量(pos)和
+// 一个法线分量(normal). 
+// 2.一个索引数组(mIndices)。 
+// 处理网格中的每个三角形：
+for(DWORD i = 0; i < mNumTriangles; ++i) 
+{ 
+    // 第i个三角形的索引
+    UNIT i0 = mIndices[i*3+0]; 
+    UNIT i1 = mIndices[i*3+1]; 
+    UNIT i2 = mIndices[i*3+2]; 
+    // 第i个三角形的顶点
+    Vertex v0 = mVertices[i0]; 
+    Vertex v1 = mVertices[i1]; 
+    Vertex v2 = mVertices[i2]; 
+    // 计算面法线
+    Vector3 e0 = v1.pos - v0.pos; 
+    Vector3 e1 = v2.pos - v0.pos; 
+    Vector3 faceNormal Cross( &e0, &e1); 
+    // 这个三角形共享了以下三个顶点，
+    // 所以要将面法线加入到这些顶点法线的平均值中。
+    mVertices[i0].normal += faceNormal; 
+    mVertices[i1].normal += faceNormal; 
+    mVertices[i2].normal += faceNormal; 
+} 
+// 对每个顶点v，我们已经将共享v的所有三角形的面法线相加了，
+// 所以现在只需归一化即可。
+for(UNIT i = 0; i < mNumVertices; ++i) 
+    mVertices[i].normal =  Normalize(&mVertices[i].normal)); 

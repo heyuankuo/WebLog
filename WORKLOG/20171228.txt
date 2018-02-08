@@ -1,0 +1,4 @@
+PDF-----------------概率密度函数
+CDF-----------------概率分布函数
+
+The most familiar property of a distribution is its mean, or expected value, denoted by μ. For discrete rv’s, it is defined as E [X] x∈X x p(x), and for continuous rv’s, it is defined as E [X] X x p(x)dx. If this integral is not finite, the mean is not defined (we will see some examples of this later).
