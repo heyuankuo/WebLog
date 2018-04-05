@@ -1,0 +1,41 @@
+发送数据帧
+rtsp协议图形播放
+RTS MPlayer
+https://blog.csdn.net/caoshangpa/article/details/53009604
+https://blog.csdn.net/nine_locks/article/details/47400597
+
+JM下载网址
+http://iphome.hhi.de/suehring/tml/download/old_jm/
+
+ffmpeg
+https://www.cnblogs.com/zjoch/archive/2013/05/19/3087191.html
+https://ffmpeg.zeranoe.com/builds/
+
+ffmpeg 编码H264
+https://blog.csdn.net/king1425/article/details/71160339
+
+视频编解码
+https://www.cnblogs.com/jiayayao/p/6506212.html
+
+UDP测试-----------------------------未完成
+Windows 服务------------------------未完成
+高性能的计时器----------------------未完成
+
+UDP 视频传输
+
+
+H264编码测试
+首先引入库文件
+在 调试->环境 中引用dll PATH=DIR;
+测试一下示例程序
+
+网络示例
+https://www.cnblogs.com/wanggang123/p/6354485.html?utm_source=itdadao&utm_medium=referral
+视频教程
+http://www.iqiyi.com/paopao/u/1426749687/video/
+
+修改outputstream
+
+VLC 直播源搭建
+https://blog.csdn.net/hktkfly6/article/details/53708107
+修改输入上下文

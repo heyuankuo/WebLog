@@ -1,0 +1,33 @@
+重叠IO  
+1. 事件通知------------完成
+3：30；https://blog.csdn.net/qq_18297675/article/details/53376276
+重叠结构如何绑定到指定的套接字上的
+
+2. 完成例程
+https://blog.csdn.net/qq_18297675/article/details/53385179
+
+UDP完成端口的实现
+https://blog.csdn.net/mycoolx/article/details/5951925
+
+rtsp协议图形播放
+RTS MPlayer
+https://blog.csdn.net/caoshangpa/article/details/53009604
+https://blog.csdn.net/nine_locks/article/details/47400597
+
+JM下载网址
+http://iphome.hhi.de/suehring/tml/download/old_jm/
+
+ffmpeg
+https://www.cnblogs.com/zjoch/archive/2013/05/19/3087191.html
+
+ffmpeg 编码H264
+https://blog.csdn.net/king1425/article/details/71160339
+
+视频编解码
+https://www.cnblogs.com/jiayayao/p/6506212.html
+
+UDP测试-----------------------------未完成
+Windows 服务------------------------未完成
+高性能的计时器----------------------未完成
+
+UDP 视频传输

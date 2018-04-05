@@ -1,0 +1,14 @@
+五种IO模型挨个测试一边-----------------------------未完成
+https://blog.csdn.net/sshhbb/article/details/6050480
+
+1.select模型：避免了异步机制实时返回 WSAEWOULDBLOCK 
+https://www.cnblogs.com/Mr-Zhong/p/4160988.html
+
+2.异步选择(WSAAsyncSelect)模型
+https://www.cnblogs.com/HPAHPA/p/7818836.html
+
+3. 事件选择EventSelect网络模型
+https://blog.csdn.net/timmiy/article/details/52167022
+
+5. IOCP模型
+https://blog.csdn.net/stonesharp/article/details/51881439

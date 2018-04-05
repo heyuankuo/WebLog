@@ -1,0 +1,33 @@
+安装ubuntu
+https://www.windows10.pro/bash-on-ubuntu-on-windows/
+https://blog.csdn.net/maoyongf2008/article/details/78928045
+
+安装python
+https://www.cnblogs.com/weven/p/7252917.html
+安装英伟达开发包
+
+TensorFlow】Windows10 64 位下安装 TensorFlow----未完成
+https://blog.csdn.net/shadown1ght/article/details/77931791
+https://blog.csdn.net/shadown1ght/article/details/77933930
+https://blog.csdn.net/u010099080/article/details/53418159
+
+CNTK安装包
+https://www.cnblogs.com/sylvanas2012/p/5419264.html
+
+尝试用windows powshell 部署程序到远端-未完成
+测试添加类例子------------------------未完成
+游戏服务器添加内存池------------------未完成
+账号异常操作则直接退出游戏和登陆------未完成
+编写靠谱的客户端----------------------未完成
+客户端登陆----------------------------未完成
+客户端打印服务器消息------------------未完成
+
+添加发送场景函数----------------------未完成
+管理员数组操作时注意多线程同步--------未完成
+查询在上次操作后10s进行以保持连接有效
+编写游戏客户端------------------未完成
+尝试搭建RTP服务器---------------未完成
+
+CNTK
+http://www.360doc.com/content/16/1229/20/1489589_618732703.shtml
+https://blog.csdn.net/qq_33771258/article/details/50772418
